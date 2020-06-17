@@ -6,14 +6,14 @@ class ClockPainter extends CustomPainter {
   static double oneDegreeInRadian = 0.01745329252;
 
   Paint _innerCircle;
-  Paint _outerCircle;
+  Paint _outerArc;
 
   Paint _hoursLine;
   Paint _minutesLine;
   Paint _secondsLine;
 
-  Paint _innerCenterCiclePaint;
-  Paint _outerCenterCiclePaint;
+  Paint _innerCenterCicle;
+  Paint _outerCenterCicle;
 
   ClockPainter() {
     _innerCircle = Paint()
@@ -21,7 +21,7 @@ class ClockPainter extends CustomPainter {
       ..strokeWidth = 15
       ..style = PaintingStyle.fill;
 
-    _outerCircle = Paint()
+    _outerArc = Paint()
       ..color = Colors.white
       ..strokeWidth = 20
       ..style = PaintingStyle.stroke;
@@ -44,12 +44,12 @@ class ClockPainter extends CustomPainter {
       ..style = PaintingStyle.stroke
       ..strokeCap = StrokeCap.round;
 
-    _innerCenterCiclePaint = Paint()
+    _innerCenterCicle = Paint()
       ..color = Color(0xFFA33535)
       ..style = PaintingStyle.fill
       ..strokeCap = StrokeCap.round;
 
-    _outerCenterCiclePaint = Paint()
+    _outerCenterCicle = Paint()
       ..color = Colors.white
       ..style = PaintingStyle.fill
       ..strokeCap = StrokeCap.round;
@@ -83,18 +83,12 @@ class ClockPainter extends CustomPainter {
       0,
       _fullCircunference,
       false,
-      _outerCircle,
+      _outerArc,
     );
 
-    canvas.drawArc(
-      Rect.fromCenter(
-        center: _center,
-        width: size.width,
-        height: size.height,
-      ),
-      0,
-      _fullCircunference,
-      false,
+    canvas.drawCircle(
+      _center,
+      _radius,
       _innerCircle,
     );
 
@@ -116,8 +110,8 @@ class ClockPainter extends CustomPainter {
       _minutesLine,
     );
 
-    canvas.drawCircle(_center, 4, _outerCenterCiclePaint);
-    canvas.drawCircle(_center, 3, _innerCenterCiclePaint);
+    canvas.drawCircle(_center, 4, _outerCenterCicle);
+    canvas.drawCircle(_center, 3, _innerCenterCicle);
 
     canvas.drawLine(
       Offset(
