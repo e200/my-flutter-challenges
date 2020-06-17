@@ -1,9 +1,12 @@
-# Flutter Clock
+# My Flutter Challenges
 
-A Clock buitin with Flutter Canvas (CustomPaint)
+Here I share all my Flutter challenges and source code
 
-## It was a great challenge
+[![Github Follow](https://img.shields.io/github/followers/e200?style=social)](https://github.com/e200)
+[![Twitter Follow](https://img.shields.io/twitter/follow/iam_e200?style=social)](https://twitter.com/iam_e200)
 
-I decided to materialize a Clock Design shared by a friend of mine on LinkedIn, and this is the result:
+## Challenges
 
-You can see the original Clock Design on [Dribbble](https://dribbble.com/shots/6783041-Clock)
+|[Flutter Clock](clock)|
+|-|
+|[Screenshot](clock/screenshots/screenshot.gif)|
