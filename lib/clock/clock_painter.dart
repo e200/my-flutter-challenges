@@ -5,7 +5,7 @@ import 'package:flutter/material.dart';
 class ClockPainter extends CustomPainter {
   Paint _innerCircle;
   Paint _outerCircle;
-  Paint _hourLine;
+  Paint _hoursLine;
   Paint _minutesLine;
   Paint _secondsLine;
 
@@ -20,9 +20,21 @@ class ClockPainter extends CustomPainter {
       ..strokeWidth = 20
       ..style = PaintingStyle.stroke;
 
-    _hourLine = Paint()
+    _secondsLine = Paint()
+      ..color = Color(0xFFA33535)
+      ..strokeWidth = 2
+      ..style = PaintingStyle.stroke
+      ..strokeCap = StrokeCap.round;
+
+    _minutesLine = Paint()
       ..color = Colors.white
-      ..strokeWidth = 10
+      ..strokeWidth = 4
+      ..style = PaintingStyle.stroke
+      ..strokeCap = StrokeCap.round;
+
+    _hoursLine = Paint()
+      ..color = Colors.white
+      ..strokeWidth = 4
       ..style = PaintingStyle.stroke
       ..strokeCap = StrokeCap.round;
   }
@@ -32,7 +44,7 @@ class ClockPainter extends CustomPainter {
     final _centerX = size.width / 2;
     final _centerY = size.height / 2;
     final _center = Offset(_centerX, _centerY);
-    // final _radius = min(_centerX, _centerY);
+    final _radius = min(_centerX, _centerY);
 
     canvas.drawArc(
       Rect.fromCenter(
@@ -49,13 +61,40 @@ class ClockPainter extends CustomPainter {
     canvas.drawArc(
       Rect.fromCenter(
         center: _center,
-        width: 200,
-        height: 200,
+        width: size.width,
+        height: size.height,
       ),
       0,
-      6.28,
+      pi * 2,
       false,
       _innerCircle,
+    );
+
+    canvas.drawLine(
+      Offset(
+        0,
+        0,
+      ),
+      Offset(0, 0),
+      _hoursLine,
+    );
+
+    canvas.drawLine(
+      Offset(
+        0,
+        0,
+      ),
+      Offset(_centerX, _centerY),
+      _minutesLine,
+    );
+
+    canvas.drawLine(
+      Offset(
+        0,
+        0,
+      ),
+      Offset(_centerX, _centerY),
+      _secondsLine,
     );
   }
 
