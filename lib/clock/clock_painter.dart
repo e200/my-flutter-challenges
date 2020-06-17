@@ -59,6 +59,18 @@ class ClockPainter extends CustomPainter {
     final _centerY = size.height / 2;
     final _center = Offset(_centerX, _centerY);
     final _radius = min(_centerX, _centerY);
+    final _fullCircunference = pi * 2;
+
+    final _now = DateTime.now();
+
+    final _hourLineWidth = (_radius / 2);
+    final _hourRadians = rad((360 / 12) * _now.hour);
+
+    final _minuteLineWidth = (_radius / 1.25);
+    final _minuteRadians = rad((360 / 60) * _now.minute);
+
+    final _secondsLineWith = (_radius / 1.25);
+    final _secondsRadians = rad((360 / 60) * _now.second);
 
     canvas.drawArc(
       Rect.fromCenter(
@@ -67,7 +79,7 @@ class ClockPainter extends CustomPainter {
         height: size.height,
       ),
       0,
-      pi * 2,
+      _fullCircunference,
       false,
       _outerCircle,
     );
@@ -79,26 +91,26 @@ class ClockPainter extends CustomPainter {
         height: size.height,
       ),
       0,
-      pi * 2,
+      _fullCircunference,
       false,
       _innerCircle,
     );
 
     canvas.drawLine(
       Offset(
-        0,
-        0,
+        _centerX + cos(_hourRadians) * _hourLineWidth,
+        _centerX + sin(_hourRadians) * _hourLineWidth,
       ),
-      Offset(0, 0),
+      _center,
       _hoursLine,
     );
 
     canvas.drawLine(
       Offset(
-        0,
-        0,
+        _centerX + cos(_minuteRadians) * _minuteLineWidth,
+        _centerX + sin(_minuteRadians) * _minuteLineWidth,
       ),
-      Offset(_centerX, _centerY),
+      _center,
       _minutesLine,
     );
 
@@ -107,13 +119,15 @@ class ClockPainter extends CustomPainter {
 
     canvas.drawLine(
       Offset(
-        0,
-        0,
+        _centerX + cos(_secondsRadians) * _secondsLineWith,
+        _centerX + sin(_secondsRadians) * _secondsLineWith,
       ),
-      Offset(_centerX, _centerY),
+      _center,
       _secondsLine,
     );
   }
+
+  double rad(double degree) => 0.01745329252 * degree;
 
   @override
   bool shouldRepaint(CustomPainter oldDelegate) {
