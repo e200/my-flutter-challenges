@@ -7,6 +7,6 @@ Here I share all my Flutter challenges and source code
 
 ## Challenges
 
-|[Flutter Clock](clock)|[Infinite Scroll](infinite_scroll)|
-|:-:|:-:|
-|![Flutter Clock](clock/screenshots/screenshot.gif)|![Infinite Scroll](infinite_scroll/screenshots/screenshot.gif)|
+|[Flutter Clock](clock)|[Infinite Scroll](infinite_scroll)|[Infinite Scroll](infinite_scroll)|
+|:-:|:-:|:-:|
+|![Flutter Clock](clock/screenshots/screenshot.gif)|![Infinite Scroll](infinite_scroll/screenshots/screenshot.gif)|![Infinite Scroll](infinite_scroll/screenshots/screenshot.gif)|
