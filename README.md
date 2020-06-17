@@ -10,3 +10,4 @@ Here I share all my Flutter challenges and source code
 |[Flutter Clock](clock)|[Infinite Scroll](infinite_scroll)|[Infinite Scroll](infinite_scroll)|
 |:-:|:-:|:-:|
 |![Flutter Clock](clock/screenshots/screenshot.gif)|![Infinite Scroll](infinite_scroll/screenshots/screenshot.gif)|![Infinite Scroll](infinite_scroll/screenshots/screenshot.gif)|
+|A Clock builtin with Canvas (CustomPaint). Original Clock Design from [Dribbble](https://dribbble.com/shots/6783041-Clock)|An implementation of Infinite Scroll + REST API|An implementation of Infinite Scroll + REST API|
