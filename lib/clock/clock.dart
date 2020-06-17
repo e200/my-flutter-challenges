@@ -23,11 +23,23 @@ class _ClockState extends State<Clock> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: SafeArea(
-        child: Center(
+      body: Center(
+        child: Container(
+          decoration: BoxDecoration(
+            borderRadius: BorderRadius.circular(100),
+            boxShadow: [
+              BoxShadow(
+                color: Colors.black.withOpacity(.3),
+                blurRadius: 10,
+                offset: Offset(0, 10),
+                spreadRadius: 10
+              ),
+            ],
+          ),
           child: Transform.rotate(
             angle: -(ClockPainter.oneDegreeInRadian * 90),
             child: CustomPaint(
+              willChange: true,
               size: Size.square(180),
               painter: ClockPainter(),
             ),
