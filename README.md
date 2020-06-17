@@ -12,4 +12,4 @@ Leave a ⭐ if you find this repo useful 😊
 |[Flutter Clock](clock)|[Infinite Scroll](infinite_scroll)|[Infinite Scroll](infinite_scroll)|
 |:-:|:-:|:-:|
 |![Canvas Clock](clock/screenshots/screenshot.gif)|![Infinite Scroll](infinite_scroll/screenshots/screenshot.gif)|![Infinite Scroll](infinite_scroll/screenshots/screenshot.gif)|
-|A Clock built with Canvas (CustomPaint)<br>Original Design from [Dribbble](https://dribbble.com/shots/6783041-Clock)|Infinite Scroll + REST API<br>[Medium article here](https://medium.com/@e200/flutter-infinite-scroll-with-rest-api-2b11f64b9d02)|Infinite Scroll + REST API<br>[Medium article here](https://medium.com/@e200/flutter-infinite-scroll-with-rest-api-2b11f64b9d02)|
+|A Clock built in Canvas (CustomPaint)<br>Original Design from [Dribbble](https://dribbble.com/shots/6783041-Clock)|Infinite Scroll + REST API<br>[Medium article here](https://medium.com/@e200/flutter-infinite-scroll-with-rest-api-2b11f64b9d02)|Infinite Scroll + REST API<br>[Medium article here](https://medium.com/@e200/flutter-infinite-scroll-with-rest-api-2b11f64b9d02)|
