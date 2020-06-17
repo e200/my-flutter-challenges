@@ -5,9 +5,13 @@ import 'package:flutter/material.dart';
 class ClockPainter extends CustomPainter {
   Paint _innerCircle;
   Paint _outerCircle;
+
   Paint _hoursLine;
   Paint _minutesLine;
   Paint _secondsLine;
+
+  Paint _innerCenterCiclePaint;
+  Paint _outerCenterCiclePaint;
 
   ClockPainter() {
     _innerCircle = Paint()
@@ -36,6 +40,16 @@ class ClockPainter extends CustomPainter {
       ..color = Colors.white
       ..strokeWidth = 4
       ..style = PaintingStyle.stroke
+      ..strokeCap = StrokeCap.round;
+
+    _innerCenterCiclePaint = Paint()
+      ..color = Color(0xFFA33535)
+      ..style = PaintingStyle.fill
+      ..strokeCap = StrokeCap.round;
+
+    _outerCenterCiclePaint = Paint()
+      ..color = Colors.white
+      ..style = PaintingStyle.fill
       ..strokeCap = StrokeCap.round;
   }
 
@@ -87,6 +101,9 @@ class ClockPainter extends CustomPainter {
       Offset(_centerX, _centerY),
       _minutesLine,
     );
+
+    canvas.drawCircle(_center, 4, _outerCenterCiclePaint);
+    canvas.drawCircle(_center, 3, _innerCenterCiclePaint);
 
     canvas.drawLine(
       Offset(
