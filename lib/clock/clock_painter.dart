@@ -3,6 +3,8 @@ import 'dart:math';
 import 'package:flutter/material.dart';
 
 class ClockPainter extends CustomPainter {
+  static double oneDegreeInRadian = 0.01745329252;
+
   Paint _innerCircle;
   Paint _outerCircle;
 
@@ -64,13 +66,13 @@ class ClockPainter extends CustomPainter {
     final _now = DateTime.now();
 
     final _hourLineWidth = (_radius / 2);
-    final _hourRadians = rad((360 / 12) * _now.hour);
+    final _hourRadians = degreeToRadian((360 / 12) * _now.hour);
 
     final _minuteLineWidth = (_radius / 1.25);
-    final _minuteRadians = rad((360 / 60) * _now.minute);
+    final _minuteRadians = degreeToRadian((360 / 60) * _now.minute);
 
     final _secondsLineWith = (_radius / 1.25);
-    final _secondsRadians = rad((360 / 60) * _now.second);
+    final _secondsRadians = degreeToRadian((360 / 60) * _now.second);
 
     canvas.drawArc(
       Rect.fromCenter(
@@ -127,7 +129,7 @@ class ClockPainter extends CustomPainter {
     );
   }
 
-  double rad(double degree) => 0.01745329252 * degree;
+  double degreeToRadian(double degree) => oneDegreeInRadian * degree;
 
   @override
   bool shouldRepaint(CustomPainter oldDelegate) {
