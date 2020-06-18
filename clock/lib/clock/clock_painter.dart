@@ -5,6 +5,9 @@ import 'package:flutter/material.dart';
 class ClockPainter extends CustomPainter {
   static double oneDegreeInRadian = 0.01745329252;
 
+  final _secondsPointerColor = Color(0xFFA33535);
+  final _otherPaintersColor = Colors.white;
+
   Paint _innerCircle;
   Paint _outerArc;
 
@@ -22,35 +25,35 @@ class ClockPainter extends CustomPainter {
       ..style = PaintingStyle.fill;
 
     _outerArc = Paint()
-      ..color = Colors.white
+      ..color = _otherPaintersColor
       ..strokeWidth = 20
       ..style = PaintingStyle.stroke;
 
     _secondsLine = Paint()
-      ..color = Color(0xFFA33535)
+      ..color = _secondsPointerColor
       ..strokeWidth = 2
       ..style = PaintingStyle.stroke
       ..strokeCap = StrokeCap.round;
 
     _minutesLine = Paint()
-      ..color = Colors.white
+      ..color = _otherPaintersColor
       ..strokeWidth = 4
       ..style = PaintingStyle.stroke
       ..strokeCap = StrokeCap.round;
 
     _hoursLine = Paint()
-      ..color = Colors.white
+      ..color = _otherPaintersColor
       ..strokeWidth = 4
       ..style = PaintingStyle.stroke
       ..strokeCap = StrokeCap.round;
 
     _innerCenterCicle = Paint()
-      ..color = Color(0xFFA33535)
+      ..color = _secondsPointerColor
       ..style = PaintingStyle.fill
       ..strokeCap = StrokeCap.round;
 
     _outerCenterCicle = Paint()
-      ..color = Colors.white
+      ..color = _otherPaintersColor
       ..style = PaintingStyle.fill
       ..strokeCap = StrokeCap.round;
   }
@@ -61,7 +64,7 @@ class ClockPainter extends CustomPainter {
     final _centerY = size.height / 2;
     final _center = Offset(_centerX, _centerY);
     final _radius = min(_centerX, _centerY);
-    final _fullCircunference = pi * 2;
+    final _circleCircunferenceSize = pi * 2;
 
     final _now = DateTime.now();
 
@@ -81,7 +84,7 @@ class ClockPainter extends CustomPainter {
         height: size.height,
       ),
       0,
-      _fullCircunference,
+      _circleCircunferenceSize,
       false,
       _outerArc,
     );
