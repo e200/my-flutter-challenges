@@ -1,3 +1,4 @@
+import 'package:circular_segment_button/circular_segment_button.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -44,15 +45,22 @@ class _MyHomePageState extends State<MyHomePage> {
         title: Text(widget.title),
       ),
       body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            Text(
-              'You have pushed the button this many times:',
+        child: CircularSegmentButton(
+          width: 100,
+          height: 100,
+          gap: 10,
+          segments: [
+            Segment(
+              color: Colors.red,
+              strokeWidth: 5,
             ),
-            Text(
-              '$_counter',
-              style: Theme.of(context).textTheme.headline4,
+            Segment(
+              color: Colors.green,
+              strokeWidth: 5,
+            ),
+            Segment(
+              color: Colors.blue,
+              strokeWidth: 5,
             ),
           ],
         ),
