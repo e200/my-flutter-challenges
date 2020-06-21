@@ -23,6 +23,8 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
+  circular_segment_button:
+    path: ../../circular_segment_button
 
 
   # The following adds the Cupertino Icons font to your application.
@@ -32,8 +34,6 @@ dependencies:
 dev_dependencies:
   flutter_test:
     sdk: flutter
-  circular_segment_button:
-    path: ../circular_segment_button
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec
