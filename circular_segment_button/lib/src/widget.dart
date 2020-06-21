@@ -25,6 +25,7 @@ class CircularSegmentButton extends StatelessWidget {
           height,
         ),
         painter: CircularSegmentPaint(
+          gap: gap,
           segments: segments,
         ),
       ),
