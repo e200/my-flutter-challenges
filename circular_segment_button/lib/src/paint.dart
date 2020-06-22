@@ -21,18 +21,28 @@ class CircularSegmentPaint extends CustomPainter {
     final _center = Offset(_centerX, _centerY);
 
     final _circunference = pi * 2;
-    final _segmentGap = 0.0174532925 * gap;
-    final _segmentSize = (_circunference / segments.length) - _segmentGap;
+
+    double _segmentGap = 0;
+
+    final _segmentSize = _circunference / segments.length;
+
+    /**
+     * Do not add gaps if
+     * only one segment provided
+     */
+    if (segments.length > 1) {
+      _segmentGap = (_segmentSize * gap) / 100;
+    }
+
+    final _segmentSizeMinusGap = _segmentSize - _segmentGap;
 
     double _startAngle = startAngle ?? -(_circunference / 2);
 
     for (int i = 0; i < segments.length; i++) {
       final _segment = segments[i];
 
-      if (i == 0) {
-        _startAngle += _segmentSize;
-      } else {
-        _startAngle += _segmentSize + _segmentGap;
+      if (i != 0) {
+        _startAngle += _segmentSizeMinusGap + _segmentGap;
       }
 
       final _segmentPaint = Paint()
@@ -48,7 +58,7 @@ class CircularSegmentPaint extends CustomPainter {
           height: size.height,
         ),
         _startAngle,
-        _segmentSize,
+        _segmentSizeMinusGap,
         false,
         _segmentPaint,
       );
