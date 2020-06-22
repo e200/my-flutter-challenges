@@ -52,6 +52,7 @@ class _MyHomePageState extends State<MyHomePage> {
           _segments.add(
             Segment(
               color: Colors.primaries[_colorIndex],
+              strokeWidth: 15
             ),
           );
         },
