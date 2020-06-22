@@ -41,26 +41,23 @@ class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text(widget.title),
-      ),
       body: Center(
         child: CircularSegmentButton(
           width: 100,
           height: 100,
-          gap: 10,
+          gap: 15,
           segments: [
             Segment(
+              color: Colors.purple,
+            ),
+            Segment(
               color: Colors.red,
-              strokeWidth: 5,
             ),
             Segment(
               color: Colors.green,
-              strokeWidth: 5,
             ),
             Segment(
               color: Colors.blue,
-              strokeWidth: 5,
             ),
           ],
         ),
