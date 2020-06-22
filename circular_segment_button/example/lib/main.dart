@@ -1,3 +1,5 @@
+import 'dart:math';
+
 import 'package:circular_segment_button/circular_segment_button.dart';
 import 'package:flutter/material.dart';
 
@@ -30,13 +32,7 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  int _counter = 0;
-
-  void _incrementCounter() {
-    setState(() {
-      _counter++;
-    });
-  }
+  List<Segment> _segments = [];
 
   @override
   Widget build(BuildContext context) {
@@ -46,24 +42,19 @@ class _MyHomePageState extends State<MyHomePage> {
           width: 100,
           height: 100,
           gap: 15,
-          segments: [
-            Segment(
-              color: Colors.purple,
-            ),
-            Segment(
-              color: Colors.red,
-            ),
-            Segment(
-              color: Colors.green,
-            ),
-            Segment(
-              color: Colors.blue,
-            ),
-          ],
+          segments: _segments,
         ),
       ),
       floatingActionButton: FloatingActionButton(
-        onPressed: _incrementCounter,
+        onPressed: () {
+          final _colorIndex = Random().nextInt(Colors.primaries.length);
+
+          _segments.add(
+            Segment(
+              color: Colors.primaries[_colorIndex],
+            ),
+          );
+        },
         tooltip: 'Increment',
         child: Icon(Icons.add),
       ),
