@@ -23,7 +23,10 @@ class MyApp extends StatelessWidget {
 }
 
 class MyHomePage extends StatefulWidget {
-  MyHomePage({Key key, this.title}) : super(key: key);
+  MyHomePage({
+    Key key,
+    this.title,
+  }) : super(key: key);
 
   final String title;
 
@@ -32,7 +35,20 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  List<Segment> _segments = [];
+  List<Segment> _segments = [
+    Segment(
+      color: Colors.red,
+      strokeWidth: 15,
+    ),
+    Segment(
+      color: Colors.green,
+      strokeWidth: 15,
+    ),
+    Segment(
+      color: Colors.blue,
+      strokeWidth: 15,
+    ),
+  ];
 
   @override
   Widget build(BuildContext context) {
@@ -52,7 +68,7 @@ class _MyHomePageState extends State<MyHomePage> {
           _segments.add(
             Segment(
               color: Colors.primaries[_colorIndex],
-              strokeWidth: 15
+              strokeWidth: 15,
             ),
           );
         },

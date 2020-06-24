@@ -1,4 +1,4 @@
-name: example
+name: flutter_desktop_media_player
 description: A new Flutter project.
 
 # The following line prevents the package from being accidentally published to
@@ -23,8 +23,6 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-  circular_segment_button:
-    path: ../../../circular_segment_button
 
 
   # The following adds the Cupertino Icons font to your application.
