@@ -23,6 +23,8 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
+  line_icons: ^0.2.0
+  google_fonts: ^1.1.0
 
 
   # The following adds the Cupertino Icons font to your application.
@@ -43,6 +45,10 @@ flutter:
   # included with your application, so that you can use the icons in
   # the material Icons class.
   uses-material-design: true
+
+  assets:
+    - assets/now_playing.jpg
+    - assets/playlist.jpg
 
   # To add assets to your application, add an assets section, like this:
   # assets:
