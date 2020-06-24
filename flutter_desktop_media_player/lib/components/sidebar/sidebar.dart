@@ -11,6 +11,7 @@ class Sidebar extends StatelessWidget {
       width: 280,
       child: Stack(
         fit: StackFit.expand,
+        overflow: Overflow.visible,
         children: <Widget>[
           Container(
             height: 300,
@@ -68,7 +69,7 @@ class Sidebar extends StatelessWidget {
             ),
           ),
           Positioned(
-            bottom: 0,
+            bottom: -80,
             left: 0,
             right: 0,
             child: Column(
