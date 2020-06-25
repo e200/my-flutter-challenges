@@ -3,12 +3,21 @@ import 'package:flutter/widgets.dart';
 
 class SidebarCover extends StatelessWidget {
   final String image;
+  final double width;
+  final double height;
+  final EdgeInsets padding;
 
-  const SidebarCover({Key key, this.image}) : super(key: key);
+  const SidebarCover({
+    Key key,
+    this.image,
+    this.width,
+    this.height,
+    this.padding,
+  }) : super(key: key);
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: EdgeInsets.only(
+      margin: padding ?? EdgeInsets.only(
         left: 30,
         right: 30,
         top: 30,
@@ -30,6 +39,8 @@ class SidebarCover extends StatelessWidget {
         child: Image.asset(
           image,
           fit: BoxFit.cover,
+          width: width,
+          height: height,
         ),
       ),
     );
