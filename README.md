@@ -2,7 +2,7 @@
 
 Here I share all **My Flutter Challenges** and source code 😍
 
-Leave a ⭐ if you find this repo useful 😊
+Leave a ⭐ if you find this repo awesome 😊
 
 [![Github Follow](https://img.shields.io/github/followers/e200?style=social)](https://github.com/e200)
 [![Twitter Follow](https://img.shields.io/twitter/follow/iam_e200?style=social)](https://twitter.com/iam_e200)
