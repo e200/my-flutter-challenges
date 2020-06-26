@@ -1,6 +1,6 @@
 # My Flutter Challenges
 
-Here I share all **My Flutter Challenges** and source code 😍
+Here I share all **My Flutter Challenges** and source codes 😍
 
 Leave a ⭐ if you find this repo awesome 😊
 
