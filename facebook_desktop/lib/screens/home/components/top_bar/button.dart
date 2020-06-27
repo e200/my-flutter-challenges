@@ -10,7 +10,7 @@ class TopBarButton extends StatefulWidget {
   const TopBarButton({
     Key key,
     this.icon,
-    this.isActive,
+    this.isActive = false,
     this.onTap,
   }) : super(key: key);
 
@@ -59,17 +59,44 @@ class _TopBarButtonState extends State<TopBarButton>
 
   @override
   Widget build(BuildContext context) {
-    return GestureDetector(
-      onTap: widget.onTap,
-      child: MouseRegion(
-        cursor: SystemMouseCursors.click,
-        child: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 15),
-          child: IconButton(
-            color: _animation.value,
-            icon: Icon(widget.icon),
-            onPressed: () {},
-          ),
+    return MouseRegion(
+      cursor: SystemMouseCursors.click,
+      child: Container(
+        height: 80,
+        child: Stack(
+          alignment: Alignment.center,
+          overflow: Overflow.visible,
+          children: [
+            IconButton(
+              padding: const EdgeInsets.symmetric(horizontal: 30),
+              color: _animation.value,
+              icon: Icon(widget.icon),
+              onPressed: widget.onTap,
+            ),
+            Positioned(
+              bottom: -1,
+              child: Align(
+                alignment: Alignment.bottomCenter,
+                child: AnimatedContainer(
+                  duration: Duration(milliseconds: 50),
+                  curve: Curves.easeInOut,
+                  decoration: BoxDecoration(
+                    color: _animation.value,
+                    borderRadius: BorderRadius.circular(5),
+                    boxShadow: [
+                      BoxShadow(
+                        color: _animation.value,
+                        blurRadius: 5,
+                        offset: Offset(0, 2),
+                      ),
+                    ],
+                  ),
+                  width: widget.isActive ? 50 : 0,
+                  height: 4,
+                ),
+              ),
+            ),
+          ],
         ),
       ),
     );
