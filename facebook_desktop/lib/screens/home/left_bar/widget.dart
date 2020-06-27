@@ -14,12 +14,14 @@ class LeftBar extends StatelessWidget {
         borderRadius: BorderRadius.circular(50),
         boxShadow: [
           BoxShadow(
-            color: Colors.grey.withOpacity(.3),
-            blurRadius: 5,
+            color: Colors.grey.withOpacity(.1),
+            blurRadius: 2,
+            offset: Offset(0, 4),
           )
         ],
       ),
       child: Column(
+        mainAxisSize: MainAxisSize.min,
         children: [
           LeftBarButton(
             icon: FeatherIcons.mail,
