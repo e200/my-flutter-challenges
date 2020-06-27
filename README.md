@@ -9,9 +9,9 @@ Leave a ⭐ if you find this repo awesome 😊
 
 ## Challenges
 
-|[Flutter Desktop Media Player](flutter_desktop_media_player)|
+|[Flutter Desktop Media Player](media_player)|
 |:-:|
-|![Flutter Desktop Media Player](flutter_desktop_media_player/screenshots/screenshot.gif)|
+|![Flutter Desktop Media Player](media_player/screenshots/screenshot.gif)|
 
 |[Canvas Clock](clock)|[Infinite Scroll](infinite_scroll)|[Infinite Scroll](infinite_scroll)|
 |:-:|:-:|:-:|
