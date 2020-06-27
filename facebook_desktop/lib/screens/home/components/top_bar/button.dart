@@ -45,13 +45,9 @@ class _TopBarButtonState extends State<TopBarButton>
   @override
   void didUpdateWidget(TopBarButton oldWidget) {
     if (widget.isActive) {
-      setState(() {
-        _animationController.forward();
-      });
+      _animationController.forward();
     } else {
-      setState(() {
-        _animationController.reverse();
-      });
+      _animationController.reverse();
     }
 
     super.didUpdateWidget(oldWidget);
@@ -103,5 +99,12 @@ class _TopBarButtonState extends State<TopBarButton>
         ),
       ),
     );
+  }
+
+  @override
+  void dispose() {
+    _animationController.dispose();
+
+    super.dispose();
   }
 }
