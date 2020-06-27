@@ -11,75 +11,99 @@ class TopBar extends StatefulWidget {
 }
 
 class _TopBarState extends State<TopBar> {
-  bool _isActive = true;
+  int _selectedPage = 0;
 
   @override
   Widget build(BuildContext context) {
-    return PreferredSize(
-      preferredSize: Size(
-        MediaQuery.of(context).size.width,
-        80,
+    return Container(
+      color: Colors.white,
+      padding: const EdgeInsets.symmetric(
+        horizontal: 30,
       ),
-      child: Container(
-        color: Colors.white,
-        padding: const EdgeInsets.symmetric(
-          horizontal: 30,
-          vertical: 15,
-        ),
-        child: Row(
-          children: [
-            Expanded(
-              flex: 1,
-              child: Align(
-                alignment: Alignment.centerLeft,
-                child: AppLogo(),
-              ),
+      child: Row(
+        children: [
+          Expanded(
+            flex: 1,
+            child: Align(
+              alignment: Alignment.centerLeft,
+              child: AppLogo(),
             ),
-            Expanded(
-              flex: 2,
-              child: Row(
-                children: [
-                  TopBarButton(
-                    icon: FeatherIcons.home,
-                    isActive: _isActive,
-                    onTap: () {
-                      setState(() {
-                        _isActive = true;
-                      });
-                    },
-                  ),
-                  TopBarButton(
-                    icon: FeatherIcons.youtube,
-                  ),
-                  TopBarButton(
-                    icon: FeatherIcons.grid,
-                  ),
-                  TopBarAvatar(),
-                  TopBarButton(
-                    icon: FeatherIcons.users,
-                  ),
-                  TopBarButton(
-                    icon: FeatherIcons.zap,
-                  ),
-                  TopBarButton(
-                    icon: FeatherIcons.smile,
-                  ),
-                ],
-              ),
-            ),
-            Expanded(
-              flex: 1,
-              child: Align(
-                alignment: Alignment.centerRight,
-                child: IconButton(
-                  color: Colors.grey.withOpacity(.6),
-                  icon: Icon(FeatherIcons.settings),
-                  onPressed: () {},
+          ),
+          Expanded(
+            flex: 6,
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                TopBarButton(
+                  icon: FeatherIcons.home,
+                  isActive: _selectedPage == 0,
+                  onTap: () {
+                    setState(() {
+                      _selectedPage = 0;
+                    });
+                  },
                 ),
+                TopBarButton(
+                  icon: FeatherIcons.youtube,
+                  isActive: _selectedPage == 1,
+                  onTap: () {
+                    setState(() {
+                      _selectedPage = 1;
+                    });
+                  },
+                ),
+                TopBarButton(
+                  icon: FeatherIcons.grid,
+                  isActive: _selectedPage == 2,
+                  onTap: () {
+                    setState(() {
+                      _selectedPage = 2;
+                    });
+                  },
+                ),
+                TopBarAvatar(),
+                TopBarButton(
+                  icon: FeatherIcons.users,
+                  isActive: _selectedPage == 3,
+                  onTap: () {
+                    setState(() {
+                      _selectedPage = 3;
+                    });
+                  },
+                ),
+                TopBarButton(
+                  icon: FeatherIcons.zap,
+                  isActive: _selectedPage == 4,
+                  onTap: () {
+                    setState(() {
+                      _selectedPage = 4;
+                    });
+                  },
+                ),
+                TopBarButton(
+                  icon: FeatherIcons.smile,
+                  isActive: _selectedPage == 5,
+                  onTap: () {
+                    setState(() {
+                      _selectedPage = 5;
+                    });
+                  },
+                ),
+              ],
+            ),
+          ),
+          Expanded(
+            flex: 1,
+            child: Align(
+              alignment: Alignment.centerRight,
+              child: IconButton(
+                color: Colors.grey.withOpacity(.6),
+                icon: Icon(FeatherIcons.settings),
+                onPressed: () {},
               ),
             ),
-          ],
-        ),
+          ),
+        ],
       ),
     );
   }
