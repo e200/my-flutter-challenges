@@ -62,8 +62,8 @@ class _TopBarAvatarState extends State<TopBarAvatar>
             borderRadius: BorderRadius.circular(15),
             child: Image.asset(
               'assets/images/avatar.jpg',
-              width: 40,
-              height: 40,
+              width: 50,
+              height: 50,
             ),
           ),
         ),
