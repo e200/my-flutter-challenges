@@ -27,8 +27,8 @@ class _ChatCardState extends State<ChatCard> {
   @override
   void initState() {
     _animation = EzAnimation(
-      1.0,
-      1.05,
+      0.0,
+      -5.0,
       Duration(milliseconds: 200),
       curve: Curves.easeInOut,
       context: context,
@@ -43,8 +43,8 @@ class _ChatCardState extends State<ChatCard> {
 
   @override
   Widget build(BuildContext context) {
-    return Transform.scale(
-      scale: _animation.value,
+    return Transform.translate(
+      offset: Offset(_animation.value, 0),
       child: MouseRegion(
         cursor: SystemMouseCursors.click,
         onEnter: (event) {
