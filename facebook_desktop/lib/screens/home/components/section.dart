@@ -15,7 +15,7 @@ class Section extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: padding,
+      padding: padding ?? EdgeInsets.zero,
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
@@ -29,13 +29,20 @@ class Section extends StatelessWidget {
 
 class SectionTitle extends StatelessWidget {
   final String title;
+  final double fontSize;
 
   const SectionTitle({
     Key key,
     this.title,
+    this.fontSize,
   }) : super(key: key);
   @override
   Widget build(BuildContext context) {
-    return Text(title, style: Theme.of(context).textTheme.headline6);
+    return Text(
+      title,
+      maxLines: 1,
+      overflow: TextOverflow.ellipsis,
+      style: Theme.of(context).textTheme.headline6.copyWith(fontSize: fontSize),
+    );
   }
 }
