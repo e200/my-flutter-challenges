@@ -1,4 +1,4 @@
-import 'package:facebook_desktop/screens/components/last_chats/widget.dart';
+import 'package:facebook_desktop/components/last_chats/widget.dart';
 import 'package:facebook_desktop/screens/home/components/top_bar/widget.dart';
 import 'package:facebook_desktop/screens/home/feed/widget.dart';
 import 'package:facebook_desktop/screens/home/left_bar/widget.dart';
@@ -19,7 +19,7 @@ class HomeScreen extends StatelessWidget {
                 Expanded(
                   child: SingleChildScrollView(
                     child: Padding(
-                      padding: const EdgeInsets.only(left: 120),
+                      padding: const EdgeInsets.only(left: 90),
                       child: Row(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
