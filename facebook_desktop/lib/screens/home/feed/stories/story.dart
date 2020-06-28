@@ -2,11 +2,13 @@ import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 
 class Story extends StatefulWidget {
+  final String name;
   final String avatar;
   final String story;
 
   const Story({
     Key key,
+    this.name,
     this.avatar,
     this.story,
   }) : super(key: key);
@@ -19,7 +21,8 @@ class _StoryState extends State<Story> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: const EdgeInsets.only(top: 15),
+      width: 150,
+      margin: const EdgeInsets.only(top: 30),
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(30),
         boxShadow: [
@@ -32,6 +35,7 @@ class _StoryState extends State<Story> {
       ),
       child: Stack(
         overflow: Overflow.visible,
+        fit: StackFit.expand,
         children: [
           ClipRRect(
             borderRadius: BorderRadius.circular(30),
@@ -88,14 +92,16 @@ class _StoryState extends State<Story> {
                             ],
                           ),
                         ),
-                        child: Text(
-                          'Eleandro Duzentos',
+                        child: widget.name != null ? Text(
+                          widget.name,
                           textAlign: TextAlign.center,
+                          maxLines: 1,
+                          overflow: TextOverflow.ellipsis,
                           style: TextStyle(
                             color: Colors.white,
                             fontWeight: FontWeight.bold,
                           ),
-                        ),
+                        ) : SizedBox(),
                       ),
                     ),
                   ],
