@@ -31,7 +31,7 @@ class LastChats extends StatelessWidget {
           children: [
             ChatCard(
               image:
-                  'https://images.unsplash.com/photo-1521587765099-8835e7201186?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=200&fit=max&ixid=eyJhcHBfaWQiOjE3Nzg0fQ',
+                  'https://pbs.twimg.com/profile_images/1095180025668743168/LgPx_hOQ.jpg',
               name: 'Eleandro Duzentos',
               message:
                   'Anim sunt exercitation ad dolor minim consectetur sit sunt minim.',
