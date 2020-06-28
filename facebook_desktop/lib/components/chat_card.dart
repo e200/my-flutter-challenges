@@ -1,7 +1,8 @@
 import 'package:ezanimation/ezanimation.dart';
-import 'package:facebook_desktop/screens/home/components/section.dart';
+import 'package:facebook_desktop/components/user_tile.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
+import 'package:flutter_feather_icons/flutter_feather_icons.dart';
 
 class ChatCard extends StatefulWidget {
   final String image;
@@ -72,55 +73,14 @@ class _ChatCardState extends State<ChatCard> {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Row(
-                  children: [
-                    Container(
-                      margin: const EdgeInsets.only(right: 10),
-                      decoration: BoxDecoration(
-                        color: Colors.white,
-                        borderRadius: BorderRadius.circular(10),
-                        boxShadow: [
-                          BoxShadow(
-                              color: Colors.black.withOpacity(.1),
-                              blurRadius: 5,
-                              offset: Offset(0, 2)),
-                        ],
-                      ),
-                      child: ClipRRect(
-                        borderRadius: BorderRadius.circular(5),
-                        child: Image(
-                          image: NetworkImage(
-                            widget.image,
-                          ),
-                          fit: BoxFit.cover,
-                          height: 50,
-                          width: 50,
-                        ),
-                      ),
-                    ),
-                    Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        SectionTitle(
-                          title: widget.name,
-                        ),
-                        SizedBox(
-                          height: 5,
-                        ),
-                        Text(
-                          '12 min ago',
-                          style: TextStyle(color: Colors.grey),
-                        ),
-                      ],
-                    ),
-                    /* Align(
-                      alignment: Alignment.topRight,
-                      child: Icon(
-                        FeatherIcons.messageSquare,
-                        color: Colors.blue,
-                      ),
-                    ), */
-                  ],
+                UserTile(
+                  name: widget.name,
+                  image: widget.image,
+                  trailing: Icon(
+                    FeatherIcons.messageSquare,
+                    color: Colors.blue,
+                    size: 14,
+                  ),
                 ),
                 SizedBox(
                   height: 10,
@@ -130,7 +90,7 @@ class _ChatCardState extends State<ChatCard> {
                   style: TextStyle(color: Colors.grey, fontSize: 12),
                   maxLines: 3,
                   overflow: TextOverflow.ellipsis,
-                )
+                ),
               ],
             ),
           ),
