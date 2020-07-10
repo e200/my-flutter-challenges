@@ -12,15 +12,14 @@ class Topbar extends StatefulWidget {
 class _TopbarState extends State<Topbar> {
   @override
   Widget build(BuildContext context) {
-    return Align(
-      alignment: Alignment.centerLeft,
-      child: Container(
-        padding: const EdgeInsets.all(10),
-        color: Theme.of(context).backgroundColor,
-        width: MediaQuery.of(context).size.width - 200,
-        height: 60,
-        child: ConstrainedBox(
-          constraints: BoxConstraints(maxWidth: 100, maxHeight: 60),
+    return Container(
+      padding: const EdgeInsets.all(10),
+      color: Theme.of(context).backgroundColor,
+      width: MediaQuery.of(context).size.width - 200,
+      child: Align(
+        child: SizedBox(
+          width: 1024,
+          height: 60,
           child: Row(
             mainAxisSize: MainAxisSize.min,
             children: [
@@ -41,7 +40,8 @@ class _TopbarState extends State<Topbar> {
                             horizontal: 10,
                             vertical: 5,
                           ),
-                          fillColor: Theme.of(context).scaffoldBackgroundColor,
+                          fillColor:
+                              Theme.of(context).scaffoldBackgroundColor,
                           prefixIcon: Icon(
                             FeatherIcons.search,
                             color: Theme.of(context).iconTheme.color,
@@ -65,11 +65,17 @@ class _TopbarState extends State<Topbar> {
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.end,
                   children: [
+                    Text(
+                      '@e200',
+                      style: TextStyle(color: Colors.grey),
+                    ),
+                    SizedBox(width: 15),
                     CircleAvatar(
                       backgroundImage: AssetImage(
                         'resources/images/profile_picture.jpg',
                       ),
                     ),
+                    SizedBox(width: 35),
                     BlocBuilder<ThemeBloc, bool>(
                       builder: (BuildContext context, isDarkMode) {
                         return IconButton(
