@@ -53,6 +53,8 @@ flutter:
   assets:
     - resources/images/twitter_logo.png
     - resources/images/profile_picture.jpg
+    - resources/images/cover.jpg
+    - resources/images/account_verified.png
   #   - images/a_dot_burr.jpeg
   #   - images/a_dot_ham.jpeg
 
