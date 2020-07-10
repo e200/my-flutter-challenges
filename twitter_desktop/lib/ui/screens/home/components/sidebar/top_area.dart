@@ -11,13 +11,16 @@ class SidebarTopArea extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: padding,
-      child: Image.asset(
-        'resources/images/twitter_logo.png',
-        fit: BoxFit.contain,
-        width: 50,
-        height: 50,
+    return Align(
+      alignment: Alignment.centerLeft,
+          child: Padding(
+        padding: padding,
+        child: Image.asset(
+          'resources/images/twitter_logo.png',
+          fit: BoxFit.contain,
+          width: 50,
+          height: 50,
+        ),
       ),
     );
   }
