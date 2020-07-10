@@ -9,6 +9,7 @@ class TwitterDesktopApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       builder: ExtendedNavigator<Router>(router: Router()),
+      themeMode: ThemeMode.dark,
       theme: getTheme(context, true),
     );
   }
