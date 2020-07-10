@@ -23,6 +23,7 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
+  flutter_bloc: ^5.0.1
   auto_route: ^0.6.1
   palette_generator: ^0.2.3
   flutter_feather_icons: ^1.0.3
@@ -51,6 +52,7 @@ flutter:
   # To add assets to your application, add an assets section, like this:
   assets:
     - resources/images/twitter_logo.png
+    - resources/images/profile_picture.jpg
   #   - images/a_dot_burr.jpeg
   #   - images/a_dot_ham.jpeg
 
