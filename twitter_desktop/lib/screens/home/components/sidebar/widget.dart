@@ -1,9 +1,11 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_feather_icons/flutter_feather_icons.dart';
 import 'package:twitter_desktop/screens/home/components/sidebar/navigation/item.dart';
 import 'package:twitter_desktop/screens/home/components/sidebar/navigation/widget.dart';
 import 'package:twitter_desktop/screens/home/components/sidebar/top_area.dart';
+import 'package:twitter_desktop/view_model/navigation_item.dart';
 
 class Sidebar extends StatefulWidget {
   final double width;
@@ -20,35 +22,32 @@ class Sidebar extends StatefulWidget {
 class _SidebarState extends State<Sidebar> {
   int _currentIndex = 0;
 
-  final _navigation = [
-    {
-      'icon': FeatherIcons.home,
-      'label': 'Home',
-    },
-    {
-      'icon': FeatherIcons.compass,
-      'label': 'Explore',
-    },
-    {
-      'icon': FeatherIcons.bell,
-      'label': 'Notifications',
-    },
-    {
-      'icon': FeatherIcons.mail,
-      'label': 'Messages',
-    },
-    {
-      'icon': FeatherIcons.bookmark,
-      'label': 'Bookmarks',
-    },
-    {
-      'icon': FeatherIcons.user,
-      'label': 'Profile',
-    },
-    {
-      'icon': FeatherIcons.moreVertical,
-      'label': 'More',
-    },
+  final _navigation = <NavigationItem>[
+    NavigationItem(
+      isSelected: true,
+      icon: FeatherIcons.home,
+      label: 'Home',
+    ),
+    NavigationItem(
+      icon: FeatherIcons.compass,
+      label: 'Explore',
+    ),
+    NavigationItem(
+      icon: FeatherIcons.bell,
+      label: 'Notifications',
+    ),
+    NavigationItem(
+      icon: FeatherIcons.mail,
+      label: 'Messages',
+    ),
+    NavigationItem(
+      icon: FeatherIcons.bookmark,
+      label: 'Bookmarks',
+    ),
+    NavigationItem(
+      icon: FeatherIcons.user,
+      label: 'Profile',
+    ),
   ];
 
   @override
@@ -64,34 +63,47 @@ class _SidebarState extends State<Sidebar> {
         ],
       ),
       width: widget.width,
-      child: Stack(
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Align(
-            alignment: Alignment.center,
-            child: NavigationBar(
-              selectedIndex: _currentIndex,
-              children: [
-                for (final _navItem in _navigation)
-                  NavigationBarItem(
-                    padding: const EdgeInsets.symmetric(
-                      horizontal: 20,
-                      vertical: 15,
-                    ),
-                    icon: Icon(
-                      _navItem['icon'],
-                      color: Theme.of(context).iconTheme.color,
-                    ),
-                    label: _navItem['label'],
-                  ),
-              ],
-            ),
+          SidebarTopArea(
+            padding: const EdgeInsets.all(15),
           ),
-          Positioned(
-            top: 0,
-            left: 0,
-            child: SidebarTopArea(
-              padding: const EdgeInsets.all(15),
-            ),
+          SizedBox(
+            height: 35,
+          ),
+          NavigationBar(
+            selectedIndex: _currentIndex,
+            children: [
+              for (int i = 0; i < _navigation.length; i++)
+                NavigationBarItem(
+                  isSelected: i == _currentIndex,
+                  padding: const EdgeInsets.symmetric(
+                    horizontal: 20,
+                    vertical: 15,
+                  ),
+                  icon: Icon(
+                    _navigation[i].icon,
+                  ),
+                  label: _navigation[i].label,
+                  onTap: () {
+                    setState(() {
+                      _currentIndex = i;
+                    });
+                  },
+                ),
+              NavigationBarItem(
+                padding: const EdgeInsets.symmetric(
+                  horizontal: 20,
+                  vertical: 15,
+                ),
+                icon: Icon(
+                  FeatherIcons.moreVertical,
+                ),
+                label: 'More',
+                onTap: () {},
+              ),
+            ],
           ),
         ],
       ),
