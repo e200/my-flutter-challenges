@@ -11,6 +11,7 @@ class TwitterDesktopApp extends StatelessWidget {
       builder: ExtendedNavigator<Router>(router: Router()),
       themeMode: ThemeMode.dark,
       theme: getTheme(context, true),
+      debugShowCheckedModeBanner: false,
     );
   }
 }
