@@ -1,5 +1,5 @@
 import 'package:auto_route/auto_route_annotations.dart';
-import 'package:twitter_desktop/screens/home.dart';
+import 'package:twitter_desktop/ui/screens/home/screen.dart';
 
 @MaterialAutoRouter(
   routes: <AutoRoute>[
