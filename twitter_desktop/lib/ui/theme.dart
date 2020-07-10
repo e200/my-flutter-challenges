@@ -1,31 +1,40 @@
 import 'package:flutter/material.dart';
 
-ThemeData getTheme(BuildContext context, bool isDark) {
-  final _primaryColor = Color(0xFF1da1f2);
+class ThemeProvider {
+  final bool isDark;
 
-  // final _scaffoldWhiteBackgroundColor = Colors.white;
-  // final _componentsDarkBackgroundColor = Color(0xFF303741);
+  ThemeProvider({
+    this.isDark = false,
+  });
 
-  final _theme = Theme.of(context).copyWith(
-    primaryColor: _primaryColor,
-    iconTheme: IconThemeData(
-      color: Color(0xFF656972),
-    ),
-  );
+  ThemeData getTheme(BuildContext context) {
+    final _primaryColor = Color(0xFF1DA1F2);
+    final _scaffold = _c(0xFF262D37, 0xFFFFFFFF);
+    final _background = _c(0xFF303841, 0xFFF2F2F2);
+    final _icon = _c(0xFF656972);
 
-  if (isDark) {
-    return _theme.copyWith(
-      scaffoldBackgroundColor: Color(0xFF262D37),
-      textTheme: TextTheme(),
-      colorScheme: Theme.of(context).colorScheme.copyWith(
-        surface: Color(0xFF303741),
-        background: Color(0xFF303741),
-        onBackground: Color(0xFF303741),
-        onPrimary: Color(0xFF303741),
-        primary: Color(0xFF303741),
-      )
+    final _theme = ThemeData(
+      primaryColor: _primaryColor,
+      scaffoldBackgroundColor: _scaffold,
+      backgroundColor: _background,
+      iconTheme: IconThemeData(
+        color: _icon,
+      ),
+      inputDecorationTheme: InputDecorationTheme(
+        filled: true,
+      ),
     );
+
+    if (isDark) {
+      return _theme.copyWith(
+        textTheme: TextTheme(),
+      );
+    }
+
+    return _theme;
   }
 
-  return _theme;
+  Color _c(int darkHex, [int lightHex]) {
+    return Color(isDark ? darkHex : lightHex ?? darkHex);
+  }
 }
