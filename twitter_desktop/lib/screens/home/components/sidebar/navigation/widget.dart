@@ -1,9 +1,9 @@
 import 'package:flutter/widgets.dart';
-import 'package:twitter_desktop/screens/home/components/sidebar/navigation/item.dart';
 
 class NavigationBar extends StatelessWidget {
   final int selectedIndex;
-  final List<NavigationBarItem> children;
+
+  final List<Widget> children;
 
   const NavigationBar({
     Key key,
