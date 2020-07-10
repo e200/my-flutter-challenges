@@ -4,7 +4,7 @@ import 'package:flutter/widgets.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:twitter_desktop/bloc/theme_bloc.dart';
 import 'package:twitter_desktop/ui/router.gr.dart';
-import 'package:twitter_desktop/ui/theme/theme.dart';
+import 'package:twitter_desktop/ui/theme.dart';
 
 class TwitterDesktopApp extends StatelessWidget {
   @override
