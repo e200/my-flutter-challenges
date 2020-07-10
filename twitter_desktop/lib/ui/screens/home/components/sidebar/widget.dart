@@ -6,6 +6,7 @@ import 'package:twitter_desktop/ui/screens/home/components/sidebar/navigation/it
 import 'package:twitter_desktop/ui/screens/home/components/sidebar/navigation/widget.dart';
 import 'package:twitter_desktop/ui/screens/home/components/sidebar/top_area.dart';
 import 'package:twitter_desktop/ui/view_model/navigation_item.dart';
+
 class Sidebar extends StatefulWidget {
   final double width;
 
@@ -53,16 +54,16 @@ class _SidebarState extends State<Sidebar> {
   Widget build(BuildContext context) {
     return Container(
       decoration: BoxDecoration(
+        color: Theme.of(context).backgroundColor,
         boxShadow: [
           BoxShadow(
-            blurRadius: 10,
-            color: Colors.black.withOpacity(.05),
+            blurRadius: 15,
+            color: Colors.black.withOpacity(.2),
           ),
         ],
       ),
       width: widget.width,
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
+      child: ListView(
         children: [
           SidebarTopArea(
             padding: const EdgeInsets.all(15),
