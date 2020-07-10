@@ -104,6 +104,21 @@ class _SidebarState extends State<Sidebar> {
               ),
             ],
           ),
+          SizedBox(height: 60),
+          Padding(
+            padding: const EdgeInsets.all(15),
+            child: RaisedButton(
+              shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(50)),
+              padding: EdgeInsets.all(15),
+              elevation: 0,
+              color: Theme.of(context).primaryColor,
+              child: Text(
+                'Tweet',
+                style: TextStyle(color: Colors.white),
+              ),
+              onPressed: () {},
+            ),
+          ),
         ],
       ),
     );
