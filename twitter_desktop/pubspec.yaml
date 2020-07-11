@@ -54,7 +54,7 @@ flutter:
     - resources/images/twitter_logo.png
     - resources/images/profile_picture.jpg
     - resources/images/cover.jpg
-    - resources/images/account_verified.png
+    - resources/images/user_verified.png
   #   - images/a_dot_burr.jpeg
   #   - images/a_dot_ham.jpeg
 
