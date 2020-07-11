@@ -3,6 +3,7 @@ import 'package:flutter/widgets.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_feather_icons/flutter_feather_icons.dart';
 import 'package:twitter_desktop/bloc/theme_bloc.dart';
+import 'package:twitter_desktop/ui/components/user.dart';
 
 class Topbar extends StatefulWidget {
   @override
@@ -13,8 +14,16 @@ class _TopbarState extends State<Topbar> {
   @override
   Widget build(BuildContext context) {
     return Container(
+      decoration: BoxDecoration(
+        color: Theme.of(context).backgroundColor,
+        boxShadow: [
+          BoxShadow(
+            blurRadius: 15,
+            color: Colors.black.withOpacity(.2),
+          ),
+        ],
+      ),
       padding: const EdgeInsets.all(10),
-      color: Theme.of(context).backgroundColor,
       width: MediaQuery.of(context).size.width - 200,
       child: Align(
         child: SizedBox(
@@ -40,8 +49,7 @@ class _TopbarState extends State<Topbar> {
                             horizontal: 10,
                             vertical: 5,
                           ),
-                          fillColor:
-                              Theme.of(context).scaffoldBackgroundColor,
+                          fillColor: Theme.of(context).scaffoldBackgroundColor,
                           prefixIcon: Icon(
                             FeatherIcons.search,
                             color: Theme.of(context).iconTheme.color,
@@ -65,15 +73,9 @@ class _TopbarState extends State<Topbar> {
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.end,
                   children: [
-                    Text(
-                      '@e200',
-                      style: TextStyle(color: Colors.grey),
-                    ),
-                    SizedBox(width: 15),
-                    CircleAvatar(
-                      backgroundImage: AssetImage(
-                        'resources/images/profile_picture.jpg',
-                      ),
+                    UserAvatar(
+                      username: '@e200',
+                      userAvatar: 'resources/images/profile_picture.jpg',
                     ),
                     SizedBox(width: 35),
                     BlocBuilder<ThemeBloc, bool>(
@@ -81,7 +83,7 @@ class _TopbarState extends State<Topbar> {
                         return IconButton(
                           splashColor: Colors.transparent,
                           highlightColor: Colors.transparent,
-                          icon: Icon(FeatherIcons.moon),
+                          icon: Icon(isDarkMode ? FeatherIcons.sun : FeatherIcons.moon),
                           onPressed: () {
                             BlocProvider.of<ThemeBloc>(context).add(
                               isDarkMode ? LightTheme() : DarkTheme(),
