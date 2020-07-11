@@ -19,7 +19,6 @@ class _HomeScreenState extends State<HomeScreen> {
           FocusScope.of(context).unfocus();
         },
         child: Stack(
-          overflow: Overflow.visible,
           children: [
             Container(
               margin: EdgeInsets.only(
