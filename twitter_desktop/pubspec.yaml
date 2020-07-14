@@ -27,6 +27,8 @@ dependencies:
   auto_route: ^0.6.1
   palette_generator: ^0.2.3
   flutter_feather_icons: ^1.0.3
+  ezanimation: ^0.4.0
+  tinycolor: ^1.0.2
 
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
@@ -55,6 +57,8 @@ flutter:
     - resources/images/profile_picture.jpg
     - resources/images/cover.jpg
     - resources/images/user_verified.png
+    - resources/images/user_placeholder.jpg
+
   #   - images/a_dot_burr.jpeg
   #   - images/a_dot_ham.jpeg
 
