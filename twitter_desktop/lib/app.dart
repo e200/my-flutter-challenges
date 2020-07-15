@@ -15,14 +15,16 @@ class TwitterDesktopApp extends StatelessWidget {
       },
       child: BlocBuilder<ThemeBloc, bool>(
         builder: (BuildContext context, isDark) {
-          return Builder(builder: (context) {
-            return MaterialApp(
-              builder: ExtendedNavigator<Router>(router: Router()),
-              themeMode: ThemeMode.dark,
-              theme: ThemeProvider(isDark: isDark).getTheme(context),
-              debugShowCheckedModeBanner: false,
-            );
-          });
+          return Builder(
+            builder: (context) {
+              return MaterialApp(
+                builder: ExtendedNavigator<Router>(router: Router()),
+                themeMode: ThemeMode.dark,
+                theme: AppTheme(isDark: isDark).getTheme(context),
+                debugShowCheckedModeBanner: false,
+              );
+            },
+          );
         },
       ),
     );
