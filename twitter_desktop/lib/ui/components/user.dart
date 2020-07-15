@@ -41,9 +41,6 @@ class _UserAvatarState extends State<UserAvatar> {
           width: widget.width,
           height: widget.height,
           decoration: BoxDecoration(
-            image: DecorationImage(
-              image: AssetImage(widget.userAvatar),
-            ),
             borderRadius: BorderRadius.circular(50),
             boxShadow: [
               BoxShadow(
@@ -52,6 +49,14 @@ class _UserAvatarState extends State<UserAvatar> {
                 offset: Offset(0, 3),
               ),
             ],
+          ),
+          child: ClipRRect(
+            borderRadius: BorderRadius.circular(50),
+            child: FadeInImage(
+              image: NetworkImage(widget.userAvatar),
+              placeholder: AssetImage('resources/images/user_placeholder.jpg'),
+              fit: BoxFit.cover,
+            ),
           ),
         ),
       ],
