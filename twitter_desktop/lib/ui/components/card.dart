@@ -9,6 +9,8 @@ class AppCard extends StatelessWidget {
   final Widget child;
   final double width;
   final double height;
+  final BorderRadius borderRadius;
+  final Color background;
   final AppCardStyle style;
 
   const AppCard({
@@ -19,6 +21,8 @@ class AppCard extends StatelessWidget {
     this.child,
     this.width,
     this.height,
+    this.background,
+    this.borderRadius,
     this.style = AppCardStyle.Normal,
   }) : super(key: key);
 
@@ -27,15 +31,16 @@ class AppCard extends StatelessWidget {
     return Container(
       width: width,
       height: height,
-      padding: padding,
+      padding: padding ?? EdgeInsets.all(10),
       decoration: BoxDecoration(
         color: style == AppCardStyle.Normal
-            ? Theme.of(context).backgroundColor
+            ? background ?? Theme.of(context).backgroundColor
             : Colors.transparent,
-        borderRadius: BorderRadius.circular(10),
+        borderRadius: borderRadius ?? BorderRadius.circular(10),
         border: Border.all(
           width: 2,
           color: Theme.of(context).backgroundColor,
+          style: BorderStyle.none,
         ),
         boxShadow: [
           if (style == AppCardStyle.Normal)
