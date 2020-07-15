@@ -1,20 +1,21 @@
 import 'package:flutter/material.dart';
 
-class ThemeProvider {
+class AppTheme {
+  static Color primaryColor = Color(0xFF1DA1F2);
+
   final bool isDark;
 
-  ThemeProvider({
+  AppTheme({
     this.isDark = false,
   });
 
   ThemeData getTheme(BuildContext context) {
-    final _primaryColor = Color(0xFF1DA1F2);
     final _scaffold = _c(0xFF262D37, 0xFFFFFFFF);
     final _background = _c(0xFF303841, 0xFFF2F2F2);
     final _icon = _c(0xFF656972);
 
     final _theme = ThemeData(
-      primaryColor: _primaryColor,
+      primaryColor: primaryColor,
       scaffoldBackgroundColor: _scaffold,
       backgroundColor: _background,
       iconTheme: IconThemeData(
