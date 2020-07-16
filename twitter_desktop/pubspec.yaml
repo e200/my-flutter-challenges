@@ -58,6 +58,7 @@ flutter:
     - resources/images/profile_picture.jpg
     - resources/images/cover.jpg
     - resources/images/user_placeholder.jpg
+    - resources/gif/facebook_screenshot.gif
 
   fonts:
     - family:  FlutterApp
