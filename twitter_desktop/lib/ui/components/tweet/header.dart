@@ -45,7 +45,6 @@ class TweetHeader extends StatelessWidget {
           '@' + tweet.user.name,
           style: TextStyle(
             color: Colors.grey,
-            fontSize: 12,
           ),
         ),
         Spacer(),
