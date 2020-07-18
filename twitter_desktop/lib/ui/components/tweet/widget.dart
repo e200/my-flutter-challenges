@@ -4,16 +4,21 @@ import 'package:twitter_desktop/models/tweet.dart';
 import 'package:twitter_desktop/ui/components/card.dart';
 import 'package:twitter_desktop/ui/components/tweet/bottoms.dart';
 import 'package:twitter_desktop/ui/components/tweet/header.dart';
+import 'package:twitter_desktop/ui/components/tweet/text_content.dart';
 import 'package:twitter_desktop/ui/components/user.dart';
 
 class TweetItem extends StatefulWidget {
   final Tweet tweet;
-  final bool primary;
+  final bool isPrimary;
+  final Function onRetweet;
+  final Function onLike;
 
   const TweetItem({
     Key key,
     this.tweet,
-    this.primary = true,
+    this.onLike,
+    this.onRetweet,
+    this.isPrimary = true,
   }) : super(key: key);
 
   @override
@@ -27,15 +32,15 @@ class _TweetItemState extends State<TweetItem> {
 
     final _cardBackground = TinyColor(
       Theme.of(context).backgroundColor,
-    ).lighten(widget.primary ?  4 : 6).color;
+    ).lighten(widget.isPrimary ? 4 : 8).color;
 
     return AppCard(
-      margin: EdgeInsets.all(5),
+      padding: const EdgeInsets.all(15),
       background: _cardBackground,
       borderRadius: BorderRadius.only(
-        topRight: Radius.circular(5),
-        bottomRight: Radius.circular(5),
-        bottomLeft: Radius.circular(5),
+        topRight: Radius.circular(10),
+        bottomRight: Radius.circular(10),
+        bottomLeft: Radius.circular(10),
       ),
       child: Column(
         children: [
@@ -46,7 +51,7 @@ class _TweetItemState extends State<TweetItem> {
                 children: [
                   Align(
                     child: Padding(
-                      padding: const EdgeInsets.only(right: 10),
+                      padding: const EdgeInsets.only(right: 15),
                       child: UserAvatar(userAvatar: _tweet.user.image),
                     ),
                   ),
@@ -62,8 +67,27 @@ class _TweetItemState extends State<TweetItem> {
                       children: [
                         Flexible(
                           child: Padding(
-                            padding: const EdgeInsets.symmetric(vertical: 5),
-                            child: Text(_tweet.content),
+                            padding: const EdgeInsets.symmetric(vertical: 15),
+                            child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                TweetTextContent(
+                                  text: _tweet.content,
+                                ),
+                                if (_tweet.image != null)
+                                  Column(
+                                    children: [
+                                      SizedBox(
+                                        height: 15,
+                                      ),
+                                      Image.network(
+                                        _tweet.image,
+                                        fit: BoxFit.cover,
+                                      ),
+                                    ],
+                                  ),
+                              ],
+                            ),
                           ),
                         ),
                       ],
@@ -73,10 +97,14 @@ class _TweetItemState extends State<TweetItem> {
               ),
             ],
           ),
-          if (widget.primary)
+          if (widget.isPrimary)
             Padding(
               padding: EdgeInsets.only(top: 5),
-              child: TweetBottoms(tweet: _tweet,),
+              child: TweetBottoms(
+                tweet: _tweet,
+                onLike: widget.onLike,
+                onRetweet: widget.onRetweet,
+              ),
             ),
         ],
       ),
