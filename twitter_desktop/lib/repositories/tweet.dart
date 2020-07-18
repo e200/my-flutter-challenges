@@ -14,7 +14,8 @@ class TweetRepository {
     User(
       fullname: 'Kelven Galvão 💙',
       name: 'irvine5k',
-      image: 'https://pbs.twimg.com/profile_images/1229396099275853824/GBfIacU3_reasonably_small.jpg',
+      image:
+          'https://pbs.twimg.com/profile_images/1229396099275853824/GBfIacU3_reasonably_small.jpg',
     ),
     User(
       fullname: 'NoobSays',
@@ -28,6 +29,7 @@ class TweetRepository {
 
   init() async {
     final _tweet1 = Tweet(
+      id: 1,
       user: _users.firstWhere((user) => user.name == 'iam_e200'),
       comments: 3,
       likes: 49,
@@ -39,9 +41,7 @@ This weekend was unforgettable! Thanks to my friends that keeps making Flutter a
 @Zfinix1 @_iamEtornam @lesliearkorful @Flutter_Africa @timsneath @mallenkb @rodydavis @AngolaFlutter @flutterango''',
       image:
           'https://github.com/e200/my-flutter-challenges/raw/master/twitter_desktop/resources/gif/facebook_screenshot.gif',
-      time: '7 mins',
-      isRetweeted: true,
-      isLiked: true,
+      time: '22 min',
     );
 
     _tweets.add(_tweet1);
@@ -53,21 +53,20 @@ This weekend was unforgettable! Thanks to my friends that keeps making Flutter a
         likes: 3,
         retweets: 0,
         content: 'Its lookin good bro! 👌🔥🔥',
-        time: '10 secs',
+        time: '13 mins',
         tweet: _tweet1,
-        isLiked: true,
       ),
     );
 
     final _tweet2 = Tweet(
+      id: 2,
       user: _users.firstWhere((user) => user.name == 'irvine5k'),
       comments: 19,
       likes: 67,
       retweets: 4,
-      content: 'Não sou uma pessoa de ler livros, mas recentemente comprei um livro chamado "A Philosophy of Software Design" e venho gostado demais, expandiu muito minha mente sobre desenvolvimento de software, o próximo da lista é "The Pragmatic Programmer", alguém tem recomendações?',
+      content:
+          'Não sou uma pessoa de ler livros, mas recentemente comprei um livro chamado "A Philosophy of Software Design" e venho gostado demais, expandiu muito minha mente sobre desenvolvimento de software, o próximo da lista é "The Pragmatic Programmer", alguém tem recomendações?',
       time: '7 mins',
-      isRetweeted: true,
-      isLiked: true,
     );
 
     _tweets.add(_tweet2);
