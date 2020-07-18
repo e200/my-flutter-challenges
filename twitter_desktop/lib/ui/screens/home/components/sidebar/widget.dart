@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_feather_icons/flutter_feather_icons.dart';
+import 'package:twitter_desktop/ui/components/tweet_button.dart';
 import 'package:twitter_desktop/ui/screens/home/components/sidebar/navigation/item.dart';
 import 'package:twitter_desktop/ui/screens/home/components/sidebar/navigation/widget.dart';
 import 'package:twitter_desktop/ui/screens/home/components/sidebar/top_area.dart';
@@ -9,10 +10,12 @@ import 'package:twitter_desktop/ui/view_model/navigation_item.dart';
 
 class Sidebar extends StatefulWidget {
   final double width;
+  final Function(int page) onSelectPage;
 
   const Sidebar({
     Key key,
     this.width,
+    this.onSelectPage,
   }) : super(key: key);
 
   @override
@@ -67,6 +70,7 @@ class _SidebarState extends State<Sidebar> {
         children: [
           SidebarTopArea(
             padding: const EdgeInsets.all(15),
+            onCollapseChanged: () {},
           ),
           SizedBox(
             height: 35,
@@ -89,6 +93,12 @@ class _SidebarState extends State<Sidebar> {
                     setState(() {
                       _currentIndex = i;
                     });
+
+                    if (i == 0) {
+                      widget.onSelectPage(0);
+                    } else if (i == 5) {
+                      widget.onSelectPage(1);
+                    }
                   },
                 ),
               NavigationBarItem(
@@ -107,17 +117,7 @@ class _SidebarState extends State<Sidebar> {
           SizedBox(height: 60),
           Padding(
             padding: const EdgeInsets.all(15),
-            child: RaisedButton(
-              shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(50)),
-              padding: EdgeInsets.all(15),
-              elevation: 0,
-              color: Theme.of(context).primaryColor,
-              child: Text(
-                'Tweet',
-                style: TextStyle(color: Colors.white),
-              ),
-              onPressed: () {},
-            ),
+            child: TweetButton(),
           ),
         ],
       ),
