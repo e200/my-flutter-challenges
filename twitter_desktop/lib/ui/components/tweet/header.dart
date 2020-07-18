@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:twitter_desktop/models/tweet.dart';
-import 'package:twitter_desktop/ui/app_icons.dart';
+import 'package:twitter_desktop/ui/components/user_verfied.dart';
 
 class TweetHeader extends StatelessWidget {
   final Tweet tweet;
@@ -23,21 +23,7 @@ class TweetHeader extends StatelessWidget {
           Row(
             children: [
               SizedBox(width: 10),
-              Stack(
-                alignment: Alignment.center,
-                children: [
-                  Container(
-                    width: 8,
-                    height: 8,
-                    color: Colors.white,
-                  ),
-                  Icon(
-                    FlutterApp.verified,
-                    color: Theme.of(context).primaryColor,
-                    size: 16,
-                  ),
-                ],
-              ),
+              UserVerfied(),
             ],
           ),
         SizedBox(width: 5),
