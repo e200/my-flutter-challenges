@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class AppTheme {
   static Color primaryColor = Color(0xFF1DA1F2);
@@ -24,12 +25,13 @@ class AppTheme {
       inputDecorationTheme: InputDecorationTheme(
         filled: true,
       ),
+      textTheme: GoogleFonts.latoTextTheme().apply(
+        bodyColor: isDark ? Colors.white : null,
+      ),
     );
 
     if (isDark) {
-      return _theme.copyWith(
-        textTheme: TextTheme(),
-      );
+      // return _theme.copyWith();
     }
 
     return _theme;
