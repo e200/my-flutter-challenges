@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/rendering.dart';
 import 'package:tinycolor/tinycolor.dart';
 import 'package:twitter_desktop/models/tweet.dart';
 import 'package:twitter_desktop/ui/components/card.dart';
@@ -12,12 +13,14 @@ class TweetItem extends StatefulWidget {
   final bool isPrimary;
   final Function onRetweet;
   final Function onLike;
+  final Function onTap;
 
   const TweetItem({
     Key key,
     this.tweet,
     this.onLike,
     this.onRetweet,
+    this.onTap,
     this.isPrimary = true,
   }) : super(key: key);
 
@@ -67,9 +70,11 @@ class _TweetItemState extends State<TweetItem> {
                       children: [
                         Flexible(
                           child: Padding(
-                            padding: const EdgeInsets.symmetric(vertical: 15),
+                            padding:
+                                const EdgeInsets.symmetric(vertical: 15),
                             child: Column(
-                              crossAxisAlignment: CrossAxisAlignment.start,
+                              crossAxisAlignment:
+                                  CrossAxisAlignment.start,
                               children: [
                                 TweetTextContent(
                                   text: _tweet.content,
