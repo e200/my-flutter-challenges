@@ -64,12 +64,12 @@ class _ActivityViewState extends State<ActivityView> {
           SingleChildScrollView(
             controller: _singleChildScrollViewController,
             child: Container(
-              height: 3000,
               margin: EdgeInsets.only(top: _sliverAppBarExpandedHeight - 40),
               padding: EdgeInsets.symmetric(horizontal: 30),
               child: Align(
                 child: SizedBox(
                   width: 1024,
+                  height: MediaQuery.of(context).size.height - 130,
                   child: Row(
                     children: [
                       Flexible(
@@ -88,7 +88,7 @@ class _ActivityViewState extends State<ActivityView> {
                         flex: 2,
                         child: Column(
                           children: [
-                            Tweets(),
+                            Tweets()
                           ],
                         ),
                       ),
