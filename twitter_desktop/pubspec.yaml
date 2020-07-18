@@ -30,6 +30,8 @@ dependencies:
   ezanimation: ^0.4.0
   tinycolor: ^1.0.2
   percent_indicator: ^2.1.5
+  google_fonts: ^1.1.0
+  like_button: ^1.0.1
 
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
