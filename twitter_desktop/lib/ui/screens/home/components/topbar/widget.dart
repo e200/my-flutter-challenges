@@ -18,23 +18,20 @@ class _TopbarState extends State<Topbar> {
         color: Theme.of(context).backgroundColor,
         boxShadow: [
           BoxShadow(
-            blurRadius: 15,
+            blurRadius: 10,
             color: Colors.black.withOpacity(.2),
           ),
         ],
       ),
       padding: const EdgeInsets.all(10),
-      width: MediaQuery.of(context).size.width - 200,
       child: Align(
         child: SizedBox(
           width: 1024,
-          height: 60,
+          height: 50,
           child: Row(
             mainAxisSize: MainAxisSize.min,
             children: [
-              Expanded(
-                child: SizedBox(),
-              ),
+              Spacer(),
               Expanded(
                 child: Container(
                   width: 300,
@@ -57,7 +54,9 @@ class _TopbarState extends State<Topbar> {
                           floatingLabelBehavior: FloatingLabelBehavior.never,
                           labelText: 'Search on Twitter',
                           labelStyle: TextStyle(
-                            color: isDark ? Colors.white : Colors.black,
+                            color: isDark
+                                ? Colors.white.withOpacity(.3)
+                                : Colors.black.withOpacity(.3),
                           ),
                           border: OutlineInputBorder(
                             borderSide: BorderSide.none,
@@ -74,8 +73,9 @@ class _TopbarState extends State<Topbar> {
                   mainAxisAlignment: MainAxisAlignment.end,
                   children: [
                     UserAvatar(
-                      username: '@e200',
-                      userAvatar: 'resources/images/profile_picture.jpg',
+                      username: '@iam_e200',
+                      userAvatar:
+                          'https://pbs.twimg.com/profile_images/1276524106662449152/RWkF0y0i_reasonably_small.jpg',
                     ),
                     SizedBox(width: 35),
                     BlocBuilder<ThemeBloc, bool>(
@@ -83,7 +83,9 @@ class _TopbarState extends State<Topbar> {
                         return IconButton(
                           splashColor: Colors.transparent,
                           highlightColor: Colors.transparent,
-                          icon: Icon(isDarkMode ? FeatherIcons.sun : FeatherIcons.moon),
+                          icon: Icon(isDarkMode
+                              ? FeatherIcons.sun
+                              : FeatherIcons.moon),
                           onPressed: () {
                             BlocProvider.of<ThemeBloc>(context).add(
                               isDarkMode ? LightTheme() : DarkTheme(),
