@@ -38,7 +38,7 @@ class _ProfileTweetsState extends State<ProfileTweets>
             ],
           ),
           SizedBox(
-            height: 2000,
+            height: 500,
             child: TabBarView(
               controller: _tabController,
               physics: NeverScrollableScrollPhysics(),
