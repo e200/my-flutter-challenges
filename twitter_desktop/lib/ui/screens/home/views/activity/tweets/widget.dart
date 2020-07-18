@@ -19,40 +19,272 @@ class _TweetsState extends State<Tweets> with SingleTickerProviderStateMixin {
   @override
   Widget build(BuildContext context) {
     return AppCard(
-      child: NestedScrollView(
-        physics: NeverScrollableScrollPhysics(),
-        headerSliverBuilder: (context, innerBoxIsScrolled) {
-          return [
-            SliverToBoxAdapter(
-              child: TabBar(
-                controller: _tabController,
-                isScrollable: true,
-                tabs: [
-                  Tab(
-                    child: Text('Tweets & Retweets'),
-                  ),
-                  Tab(
-                    child: Text('Media'),
-                  ),
-                  Tab(
-                    child: Text('Likes'),
-                  ),
-                ],
-              ),
-            ),
-          ];
-        },
-        body: Container(
-          child: TabBarView(
+      child: Column(
+        children: [
+          TabBar(
             controller: _tabController,
-            physics: NeverScrollableScrollPhysics(),
-            children: [
-              Text('a'),
-              Text('b'),
-              Text('c'),
+            tabs: [
+              Tab(
+                child: Text('Tweets & Retweets'),
+              ),
+              Tab(
+                child: Text('Media'),
+              ),
+              Tab(
+                child: Text('Likes'),
+              ),
             ],
           ),
-        ),
+          SizedBox(
+            height: MediaQuery.of(context).size.height - 220,
+            child: TabBarView(
+              controller: _tabController,
+              physics: NeverScrollableScrollPhysics(),
+              children: [
+                ListView(
+                  children: [
+                    ListTile(
+                      title: Text('Text'),
+                    ),
+                    ListTile(
+                      title: Text('Text'),
+                    ),
+                    ListTile(
+                      title: Text('Text'),
+                    ),
+                    ListTile(
+                      title: Text('Text'),
+                    ),
+                    ListTile(
+                      title: Text('Text'),
+                    ),
+                    ListTile(
+                      title: Text('Text'),
+                    ),
+                    ListTile(
+                      title: Text('Text'),
+                    ),
+                    ListTile(
+                      title: Text('Text'),
+                    ),
+                    ListTile(
+                      title: Text('Text'),
+                    ),
+                    ListTile(
+                      title: Text('Text'),
+                    ),
+                    ListTile(
+                      title: Text('Text'),
+                    ),
+                    ListTile(
+                      title: Text('Text'),
+                    ),
+                    ListTile(
+                      title: Text('Text'),
+                    ),
+                    ListTile(
+                      title: Text('Text'),
+                    ),
+                    ListTile(
+                      title: Text('Text'),
+                    ),
+                    ListTile(
+                      title: Text('Text'),
+                    ),
+                  ],
+                ),
+                ListView(
+                  children: [
+                    ListTile(
+                      title: Text('Text'),
+                    ),
+                    ListTile(
+                      title: Text('Text'),
+                    ),
+                    ListTile(
+                      title: Text('Text'),
+                    ),
+                    ListTile(
+                      title: Text('Text'),
+                    ),
+                    ListTile(
+                      title: Text('Text'),
+                    ),
+                    ListTile(
+                      title: Text('Text'),
+                    ),
+                    ListTile(
+                      title: Text('Text'),
+                    ),
+                    ListTile(
+                      title: Text('Text'),
+                    ),
+                    ListTile(
+                      title: Text('Text'),
+                    ),
+                    ListTile(
+                      title: Text('Text'),
+                    ),
+                    ListTile(
+                      title: Text('Text'),
+                    ),
+                    ListTile(
+                      title: Text('Text'),
+                    ),
+                    ListTile(
+                      title: Text('Text'),
+                    ),
+                    ListTile(
+                      title: Text('Text'),
+                    ),
+                    ListTile(
+                      title: Text('Text'),
+                    ),
+                  ],
+                ),
+                ListView(
+                  children: [
+                    ListTile(
+                      title: Text('Text'),
+                    ),
+                    ListTile(
+                      title: Text('Text'),
+                    ),
+                    ListTile(
+                      title: Text('Text'),
+                    ),
+                    ListTile(
+                      title: Text('Text'),
+                    ),
+                    ListTile(
+                      title: Text('Text'),
+                    ),
+                    ListTile(
+                      title: Text('Text'),
+                    ),
+                    ListTile(
+                      title: Text('Text'),
+                    ),
+                    ListTile(
+                      title: Text('Text'),
+                    ),
+                    ListTile(
+                      title: Text('Text'),
+                    ),
+                    ListTile(
+                      title: Text('Text'),
+                    ),
+                    ListTile(
+                      title: Text('Text'),
+                    ),
+                    ListTile(
+                      title: Text('Text'),
+                    ),
+                    ListTile(
+                      title: Text('Text'),
+                    ),
+                    ListTile(
+                      title: Text('Text'),
+                    ),
+                    ListTile(
+                      title: Text('Text'),
+                    ),
+                    ListTile(
+                      title: Text('Text'),
+                    ),
+                    ListTile(
+                      title: Text('Text'),
+                    ),
+                    ListTile(
+                      title: Text('Text'),
+                    ),
+                    ListTile(
+                      title: Text('Text'),
+                    ),
+                    ListTile(
+                      title: Text('Text'),
+                    ),
+                    ListTile(
+                      title: Text('Text'),
+                    ),
+                    ListTile(
+                      title: Text('Text'),
+                    ),
+                    ListTile(
+                      title: Text('Text'),
+                    ),
+                    ListTile(
+                      title: Text('Text'),
+                    ),
+                    ListTile(
+                      title: Text('Text'),
+                    ),
+                    ListTile(
+                      title: Text('Text'),
+                    ),
+                    ListTile(
+                      title: Text('Text'),
+                    ),
+                    ListTile(
+                      title: Text('Text'),
+                    ),
+                    ListTile(
+                      title: Text('Text'),
+                    ),
+                    ListTile(
+                      title: Text('Text'),
+                    ),
+                    ListTile(
+                      title: Text('Text'),
+                    ),
+                    ListTile(
+                      title: Text('Text'),
+                    ),
+                    ListTile(
+                      title: Text('Text'),
+                    ),
+                    ListTile(
+                      title: Text('Text'),
+                    ),
+                    ListTile(
+                      title: Text('Text'),
+                    ),
+                    ListTile(
+                      title: Text('Text'),
+                    ),
+                    ListTile(
+                      title: Text('Text'),
+                    ),
+                    ListTile(
+                      title: Text('Text'),
+                    ),
+                    ListTile(
+                      title: Text('Text'),
+                    ),
+                    ListTile(
+                      title: Text('Text'),
+                    ),
+                    ListTile(
+                      title: Text('Text'),
+                    ),
+                    ListTile(
+                      title: Text('Text'),
+                    ),
+                    ListTile(
+                      title: Text('Text'),
+                    ),
+                    ListTile(
+                      title: Text('Text'),
+                    ),
+                    ListTile(
+                      title: Text('Text'),
+                    ),
+                  ],
+                ),
+              ],
+            ),
+          ),
+        ],
       ),
     );
   }
