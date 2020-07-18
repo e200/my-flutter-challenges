@@ -9,6 +9,11 @@ Leave a ⭐ if you find this repo awesome 😊
 
 ## Challenges
 
+|[Twitter Desktop](twitter_desktop)|
+|:-:|
+|![Twitter Desktop](twitter_desktop/screenshots/screenshot.gif)|
+|[Preview on Twitter](https://twitter.com/iam_e200/status/1284572118206656513)<br>[Preview on LinkedIn](https://www.linkedin.com/feed/update/urn:li:activity:6682540431596654592/)|
+
 |[Flutter Desktop Media Player](flutter_desktop_media_player)|[Facebook Desktop](facebook_desktop)|
 |:-:|:-:|
 |![Flutter Desktop Media Player](flutter_desktop_media_player/screenshots/screenshot.gif)|![Facebook Desktop](facebook_desktop/screenshots/screenshot.gif)|
