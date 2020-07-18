@@ -17,25 +17,11 @@ class UserCard extends StatelessWidget {
       padding: EdgeInsets.all(_gap),
       child: Stack(
         children: [
-          Positioned(
-            top: 0,
-            left: 0,
-            child: Container(
-              decoration: BoxDecoration(
-                image: DecorationImage(
-                  image: AssetImage('resources/images/user_verified.png'),
-                ),
-                borderRadius: BorderRadius.circular(50),
-              ),
-              width: 15,
-              height: 15,
-            ),
-          ),
           Column(
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               UserAvatar(
-                userAvatar: 'resources/images/profile_picture.jpg',
+                userAvatar: 'https://pbs.twimg.com/profile_images/1276524106662449152/RWkF0y0i_reasonably_small.jpg',
                 width: 75,
                 height: 75,
               ),
@@ -48,7 +34,7 @@ class UserCard extends StatelessWidget {
               ),
               SizedBox(height: 5),
               Text(
-                '@e200',
+                '@iam_e200',
                 style: TextStyle(color: Colors.grey),
               ),
               SizedBox(height: 15),
