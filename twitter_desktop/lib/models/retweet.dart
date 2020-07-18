@@ -8,8 +8,8 @@ class Retweet extends Tweet {
   int retweets;
   int likes;
 
-  bool retweeted;
-  bool liked;
+  bool isRetweeted;
+  bool isLiked;
 
   User user;
   Tweet tweet;
@@ -22,7 +22,7 @@ class Retweet extends Tweet {
     this.time,
     this.user,
     this.tweet,
-    this.liked = false,
-    this.retweeted = false,
+    this.isLiked = false,
+    this.isRetweeted = false,
   });
 }
