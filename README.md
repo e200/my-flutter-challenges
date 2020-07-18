@@ -12,12 +12,12 @@ Leave a ⭐ if you find this repo awesome 😊
 |[Twitter Desktop](twitter_desktop)|
 |:-:|
 |![Twitter Desktop](twitter_desktop/screenshots/screenshot.gif)|
-|[Preview on Twitter](https://twitter.com/iam_e200/status/1284572118206656513)<br>[Preview on LinkedIn](https://www.linkedin.com/feed/update/urn:li:activity:6682540431596654592/)|
+|[Video on Twitter](https://twitter.com/iam_e200/status/1284572118206656513)<br>[Video on LinkedIn](https://www.linkedin.com/posts/iam-e200_flutter-flutterdesktop-flutterangola-activity-6690341558543228928-3VeJ)|
 
 |[Flutter Desktop Media Player](flutter_desktop_media_player)|[Facebook Desktop](facebook_desktop)|
 |:-:|:-:|
 |![Flutter Desktop Media Player](flutter_desktop_media_player/screenshots/screenshot.gif)|![Facebook Desktop](facebook_desktop/screenshots/screenshot.gif)|
-|[Preview on Twitter](https://twitter.com/iam_e200/status/1277334514092605440)<br>[Preview on LinkedIn](https://www.linkedin.com/feed/update/urn:li:activity:6682540431596654592/)|[Preview on Twitter](https://twitter.com/iam_e200/status/1276417956638003200)<br>[Preview on LinkedIn](https://www.linkedin.com/feed/update/urn:li:activity:6683107918067335168/)|
+|[Video on Twitter](https://twitter.com/iam_e200/status/1277334514092605440)<br>[Video on LinkedIn](https://www.linkedin.com/feed/update/urn:li:activity:6682540431596654592/)|[Video on Twitter](https://twitter.com/iam_e200/status/1276417956638003200)<br>[Video on LinkedIn](https://www.linkedin.com/feed/update/urn:li:activity:6683107918067335168/)|
 
 |[Canvas Clock](clock)|[Infinite Scroll](infinite_scroll)|[Infinite Scroll](infinite_scroll)|
 |:-:|:-:|:-:|
