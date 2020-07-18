@@ -117,7 +117,9 @@ class _SidebarState extends State<Sidebar> {
           SizedBox(height: 60),
           Padding(
             padding: const EdgeInsets.all(15),
-            child: TweetButton(),
+            child: TweetButton(
+              onPressed: () {},
+            ),
           ),
         ],
       ),

@@ -1,4 +1,3 @@
-
 import 'package:ezanimation/ezanimation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -155,6 +154,10 @@ class _NewTweetState extends State<NewTweet> {
                           SizedBox(width: 10),
                           TweetButton(
                             contentPadding: EdgeInsets.zero,
+                            onPressed: _tweetTextController.text.length >
+                                    _maxTweetChars
+                                ? null
+                                : () {},
                           ),
                         ],
                       ),

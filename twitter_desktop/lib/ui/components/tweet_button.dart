@@ -2,10 +2,12 @@ import 'package:flutter/material.dart';
 
 class TweetButton extends StatelessWidget {
   final EdgeInsets contentPadding;
+  final Function onPressed;
 
   const TweetButton({
     Key key,
     this.contentPadding,
+    this.onPressed,
   }) : super(key: key);
 
   @override
@@ -21,7 +23,7 @@ class TweetButton extends StatelessWidget {
         'Tweet',
         style: TextStyle(color: Colors.white),
       ),
-      onPressed: () {},
+      onPressed: onPressed,
     );
   }
 }
