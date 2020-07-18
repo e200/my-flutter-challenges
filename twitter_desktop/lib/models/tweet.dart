@@ -1,6 +1,7 @@
 import 'package:twitter_desktop/models/user.dart';
 
 class Tweet {
+  int id;
   String content;
   String time;
   String image;
@@ -14,6 +15,7 @@ class Tweet {
   bool isLiked;
 
   Tweet({
+    this.id,
     this.comments,
     this.content,
     this.image,
