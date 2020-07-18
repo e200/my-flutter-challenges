@@ -31,7 +31,8 @@ class AppCard extends StatelessWidget {
     return Container(
       width: width,
       height: height,
-      padding: padding ?? EdgeInsets.all(10),
+      padding: padding,
+      margin: margin,
       decoration: BoxDecoration(
         color: style == AppCardStyle.Normal
             ? background ?? Theme.of(context).backgroundColor
