@@ -4,17 +4,20 @@ import 'package:twitter_desktop/models/retweet.dart';
 import 'package:twitter_desktop/ui/components/card.dart';
 import 'package:twitter_desktop/ui/components/tweet/bottoms.dart';
 import 'package:twitter_desktop/ui/components/tweet/header.dart';
+import 'package:twitter_desktop/ui/components/tweet/text_content.dart';
 import 'package:twitter_desktop/ui/components/tweet/widget.dart';
 import 'package:twitter_desktop/ui/components/user.dart';
 
 class RetweetItem extends StatefulWidget {
   final Retweet retweet;
-  final bool primary;
+  final Function onRetweet;
+  final Function onLike;
 
   const RetweetItem({
     Key key,
     this.retweet,
-    this.primary = true,
+    this.onLike,
+    this.onRetweet,
   }) : super(key: key);
 
   @override
@@ -31,12 +34,12 @@ class _RetweetItemState extends State<RetweetItem> {
     ).lighten(4).color;
 
     return AppCard(
-      margin: EdgeInsets.all(5),
+      padding: const EdgeInsets.all(15),
       background: _cardBackground,
       borderRadius: BorderRadius.only(
-        topRight: Radius.circular(5),
-        bottomRight: Radius.circular(5),
-        bottomLeft: Radius.circular(5),
+        topRight: Radius.circular(10),
+        bottomRight: Radius.circular(10),
+        bottomLeft: Radius.circular(10),
       ),
       child: Column(
         children: [
@@ -47,7 +50,7 @@ class _RetweetItemState extends State<RetweetItem> {
                 children: [
                   Align(
                     child: Padding(
-                      padding: const EdgeInsets.only(right: 10),
+                      padding: const EdgeInsets.only(right: 15),
                       child: UserAvatar(userAvatar: _retweet.user.image),
                     ),
                   ),
@@ -68,12 +71,14 @@ class _RetweetItemState extends State<RetweetItem> {
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
                                 Padding(
-                                  padding: const EdgeInsets.only(bottom: 10),
-                                  child: Text(_retweet.content),
+                                  padding: const EdgeInsets.only(bottom: 15),
+                                  child: TweetTextContent(
+                                    text: _retweet.content,
+                                  ),
                                 ),
                                 TweetItem(
                                   tweet: _retweet.tweet,
-                                  primary: false,
+                                  isPrimary: false,
                                 ),
                               ],
                             ),
@@ -88,7 +93,11 @@ class _RetweetItemState extends State<RetweetItem> {
           ),
           Padding(
             padding: EdgeInsets.only(top: 5),
-            child: TweetBottoms(tweet: _retweet,),
+            child: TweetBottoms(
+              tweet: _retweet,
+              onLike: widget.onLike,
+              onRetweet: widget.onRetweet,
+            ),
           ),
         ],
       ),
