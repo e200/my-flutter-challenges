@@ -7,13 +7,14 @@ class TweetRepository {
     User(
       fullname: 'Eleandro Duzentos',
       name: 'iam_e200',
-      image: 'https://avatars0.githubusercontent.com/u/20504726?s=120&v=4',
+      image:
+          'https://pbs.twimg.com/profile_images/1276524106662449152/RWkF0y0i_reasonably_small.jpg',
       isVerified: true,
     ),
     User(
-      fullname: 'Tyna Sneathie',
-      name: 'tinasneathie',
-      image: 'https://randomuser.me/api/portraits/women/9.jpg',
+      fullname: 'Kelven Galvão 💙',
+      name: 'irvine5k',
+      image: 'https://pbs.twimg.com/profile_images/1229396099275853824/GBfIacU3_reasonably_small.jpg',
     ),
     User(
       fullname: 'NoobSays',
@@ -26,35 +27,55 @@ class TweetRepository {
   final List<Tweet> _tweets = [];
 
   init() async {
-    final _mainTweet = Tweet(
+    final _tweet1 = Tweet(
       user: _users.firstWhere((user) => user.name == 'iam_e200'),
       comments: 3,
       likes: 49,
       retweets: 7,
-      content: 'Twitter Redesign built with @FlutterDev',
+      content: '''Facebook Redesign built with @FlutterDev
+
+This weekend was unforgettable! Thanks to my friends that keeps making Flutter awesome!!!
+
+@Zfinix1 @_iamEtornam @lesliearkorful @Flutter_Africa @timsneath @mallenkb @rodydavis @AngolaFlutter @flutterango''',
+      image:
+          'https://github.com/e200/my-flutter-challenges/raw/master/twitter_desktop/resources/gif/facebook_screenshot.gif',
       time: '7 mins',
-      retweeted: true,
-      liked: true,
+      isRetweeted: true,
+      isLiked: true,
     );
 
-    _tweets.add(_mainTweet);
+    _tweets.add(_tweet1);
 
     _tweets.add(
       Retweet(
         user: _users.firstWhere((user) => user.name == 'NoobScorpio'),
         comments: 2,
         likes: 3,
+        retweets: 0,
         content: 'Its lookin good bro! 👌🔥🔥',
         time: '10 secs',
-        tweet: _mainTweet,
-        liked: true,
+        tweet: _tweet1,
+        isLiked: true,
       ),
     );
+
+    final _tweet2 = Tweet(
+      user: _users.firstWhere((user) => user.name == 'irvine5k'),
+      comments: 19,
+      likes: 67,
+      retweets: 4,
+      content: 'Não sou uma pessoa de ler livros, mas recentemente comprei um livro chamado "A Philosophy of Software Design" e venho gostado demais, expandiu muito minha mente sobre desenvolvimento de software, o próximo da lista é "The Pragmatic Programmer", alguém tem recomendações?',
+      time: '7 mins',
+      isRetweeted: true,
+      isLiked: true,
+    );
+
+    _tweets.add(_tweet2);
   }
 
   Future<List<Tweet>> fetch() async {
     await Future.delayed(Duration(seconds: 2));
 
-    return _tweets;
+    return _tweets.reversed.toList();
   }
 }
