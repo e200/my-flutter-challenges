@@ -3,15 +3,15 @@ import 'package:flutter/rendering.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_feather_icons/flutter_feather_icons.dart';
 import 'package:twitter_desktop/ui/components/card.dart';
-import 'package:twitter_desktop/ui/screens/home/views/activity/tweets/widget.dart';
-import 'package:twitter_desktop/ui/screens/home/views/activity/user_card.dart';
+import 'package:twitter_desktop/ui/screens/home/views/profile/tweets/widget.dart';
+import 'package:twitter_desktop/ui/screens/home/views/profile/user_card.dart';
 
-class ActivityView extends StatefulWidget {
+class ProfileView extends StatefulWidget {
   @override
-  _ActivityViewState createState() => _ActivityViewState();
+  _ProfileViewState createState() => _ProfileViewState();
 }
 
-class _ActivityViewState extends State<ActivityView> {
+class _ProfileViewState extends State<ProfileView> {
   ScrollController _customScrollViewController;
   ScrollController _singleChildScrollViewController;
 
@@ -79,7 +79,7 @@ class _ActivityViewState extends State<ActivityView> {
                             SizedBox(
                               height: 15,
                             ),
-                            Activities(),
+                            ProfileItems(),
                           ],
                         ),
                       ),
@@ -88,19 +88,7 @@ class _ActivityViewState extends State<ActivityView> {
                         flex: 2,
                         child: Column(
                           children: [
-                            Tweets()
-                          ],
-                        ),
-                      ),
-                      SizedBox(width: 15),
-                      Flexible(
-                        child: Column(
-                          children: [
-                            UserCard(gap: _gap),
-                            SizedBox(
-                              height: 15,
-                            ),
-                            Activities(),
+                            ProfileTweets()
                           ],
                         ),
                       ),
@@ -116,7 +104,7 @@ class _ActivityViewState extends State<ActivityView> {
   }
 }
 
-class Activities extends StatelessWidget {
+class ProfileItems extends StatelessWidget {
   final _cardHeight = 100.0;
 
   @override

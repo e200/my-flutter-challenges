@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:twitter_desktop/ui/screens/home/components/sidebar/widget.dart';
 import 'package:twitter_desktop/ui/screens/home/components/topbar/widget.dart';
-import 'package:twitter_desktop/ui/screens/home/views/activity/view.dart';
+import 'package:twitter_desktop/ui/screens/home/views/profile/view.dart';
 import 'package:twitter_desktop/ui/screens/home/views/tweets/view.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -43,7 +43,7 @@ class _HomeScreenState extends State<HomeScreen> {
                 controller: _pageController,
                 children: [
                   TweetsView(),
-                  ActivityView(),
+                  ProfileView(),
                 ],
               ),
             ),
