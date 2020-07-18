@@ -5,7 +5,7 @@ import 'package:twitter_desktop/bloc/theme_bloc.dart';
 import 'package:twitter_desktop/ui/components/card.dart';
 
 class TitledCard extends StatelessWidget {
-  final Widget title;
+  final String title;
   final double width;
   final Widget child;
   final EdgeInsets padding;
@@ -30,7 +30,7 @@ class TitledCard extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Text(
-                'Trends for you',
+                title,
                 style: Theme.of(context).textTheme.headline6.apply(
                       color: isDark
                           ? Colors.white.withOpacity(.6)
