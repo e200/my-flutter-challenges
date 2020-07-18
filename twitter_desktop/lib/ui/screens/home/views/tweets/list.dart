@@ -45,10 +45,38 @@ class _TweetsListState extends State<TweetsList> {
 
           return Wrap(
             runSpacing: 10,
-            children: _tweets.map((tweet) {
-              if (tweet is Retweet) {
-                return RetweetItem(
-                  retweet: tweet,
+            children: [
+              ..._tweets.map((tweet) {
+                if (tweet is Retweet) {
+                  return RetweetItem(
+                    retweet: tweet,
+                    onLike: () {
+                      setState(() {
+                        tweet.isLiked = !tweet.isLiked;
+
+                        if (tweet.isLiked) {
+                          tweet.likes++;
+                        } else {
+                          tweet.likes--;
+                        }
+                      });
+                    },
+                    onRetweet: () {
+                      setState(() {
+                        tweet.isRetweeted = !tweet.isRetweeted;
+
+                        if (tweet.isRetweeted) {
+                          tweet.retweets++;
+                        } else {
+                          tweet.retweets--;
+                        }
+                      });
+                    },
+                  );
+                }
+
+                return TweetItem(
+                  tweet: tweet,
                   onLike: () {
                     setState(() {
                       tweet.isLiked = !tweet.isLiked;
@@ -72,34 +100,17 @@ class _TweetsListState extends State<TweetsList> {
                     });
                   },
                 );
-              }
-
-              return TweetItem(
-                tweet: tweet,
-                onLike: () {
-                  setState(() {
-                    tweet.isLiked = !tweet.isLiked;
-
-                    if (tweet.isLiked) {
-                      tweet.likes++;
-                    } else {
-                      tweet.likes--;
-                    }
-                  });
-                },
-                onRetweet: () {
-                  setState(() {
-                    tweet.isRetweeted = !tweet.isRetweeted;
-
-                    if (tweet.isRetweeted) {
-                      tweet.retweets++;
-                    } else {
-                      tweet.retweets--;
-                    }
-                  });
-                },
-              );
-            }).toList(),
+              }).toList(),
+              ListTile(
+                title: Center(
+                  child: Container(
+                    width: 25,
+                    height: 25,
+                    child: CircularProgressIndicator(),
+                  ),
+                ),
+              ),
+            ],
           );
         },
       ),
