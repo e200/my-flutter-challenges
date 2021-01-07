@@ -3,5 +3,10 @@ import 'package:flutter/material.dart';
 
 class AnimatedMousePointerApp extends StatelessWidget {
   @override
-  Widget build(BuildContext context) => MaterialApp(home: HomeScreen());
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      home: HomeScreen(),
+      debugShowCheckedModeBanner: false,
+    );
+  }
 }
