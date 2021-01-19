@@ -1,9 +1,8 @@
-import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:twitter_desktop/bloc/theme_bloc.dart';
-import 'package:twitter_desktop/ui/router.gr.dart';
+import 'package:twitter_desktop/ui/screens/home/screen.dart';
 import 'package:twitter_desktop/ui/theme.dart';
 
 class TwitterDesktopApp extends StatelessWidget {
@@ -15,15 +14,11 @@ class TwitterDesktopApp extends StatelessWidget {
       },
       child: BlocBuilder<ThemeBloc, bool>(
         builder: (BuildContext context, isDark) {
-          return Builder(
-            builder: (context) {
-              return MaterialApp(
-                builder: ExtendedNavigator<Router>(router: Router()),
-                themeMode: ThemeMode.dark,
-                theme: AppTheme(isDark: isDark).getTheme(context),
-                debugShowCheckedModeBanner: false,
-              );
-            },
+          return MaterialApp(
+            themeMode: ThemeMode.dark,
+            theme: AppTheme(isDark: isDark).getTheme(context),
+            debugShowCheckedModeBanner: false,
+            home: HomeScreen(),
           );
         },
       ),
