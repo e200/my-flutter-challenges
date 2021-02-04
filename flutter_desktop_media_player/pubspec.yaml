@@ -48,8 +48,8 @@ flutter:
   uses-material-design: true
 
   assets:
-    - assets/now_playing.jpg
-    - assets/playlist.jpg
+    - assets/babulla-cover.jpg
+    - assets/malembe-cover.jpg
 
   # To add assets to your application, add an assets section, like this:
   # assets:
