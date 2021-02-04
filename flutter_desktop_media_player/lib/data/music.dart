@@ -18,52 +18,52 @@ class MusicRepository {
   Future<List<Music>> getAll() async {
     return [
       Music(
-        title: 'So Heavy I Fell Through the Earth (Visualizer)',
-        artist: 'Grimes',
-        album: 'So Heavy I Fell Through the Earth (Visualizer)',
-        duration: '3:52',
+        title: 'Blue (Original Mix)',
+        artist: 'Wilson Kentura',
+        album: 'Unknown',
+        duration: '6:51',
         createdAt: '20 min ago'
       ),
       Music(
-        title: 'WISH',
-        artist: 'Denzel Curry Feat. Kiddo Marv',
-        album: 'ZUU',
-        duration: '3:12',
+        title: 'You Stole My Funk',
+        artist: 'Wilson Kentura, Tiuze Money, Chilli Funk',
+        album: 'Unknown',
+        duration: '6:26',
         createdAt: '15 min ago'
       ),
       Music(
-        title: 'Cayendo',
-        artist: 'Frank Ocean',
-        album: 'Side A - Acoustic',
-        duration: '3:23',
+        title: 'Babulla (Original Mix)',
+        artist: 'Wilson Kentura, Tiuze Money, Mil Tokes Portuga',
+        album: 'Babulla',
+        duration: '6:17',
         createdAt: '17 min ago'
       ),
       Music(
-        title: 'Wdpk 83.7 FM',
-        artist: 'Daft Punk',
-        album: 'Homework',
-        duration: '0:28',
+        title: 'Jungle Jail',
+        artist: 'Wilson Kentura',
+        album: 'Unknown',
+        duration: '7:24',
         createdAt: '11 min ago'
       ),
       Music(
-        title: 'Say It',
-        artist: 'Flume feat. Tove Lo',
-        album: 'Skin',
-        duration: '4:22',
+        title: 'Ingani',
+        artist: 'Afro Warriors, Wilson Kentura, Lizwi',
+        album: 'Unknown',
+        duration: '6:16',
         createdAt: '20-05-27'
       ),
       Music(
-        title: 'Mistubishi Sony',
-        artist: 'Frank Ocean',
-        album: 'Endless',
-        duration: '2:26',
+        title: 'Mungu',
+        artist: 'Wilson Kentura',
+        album: 'Unknown',
+        duration: '7:54',
         createdAt: '2020-05-27'
       ),
       Music(
-        title: 'THE SCOTTS',
-        artist: 'THE SCOTTS',
+        title: 'Hybrid',
+        artist: 'Sixnautic, Wilson Kentura',
         album: 'THE SCOTTS',
-        duration: '2:46',
+        duration: '6:26',
         createdAt: '2020-05-26'
       ),
     ];
