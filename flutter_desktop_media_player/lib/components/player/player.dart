@@ -106,7 +106,7 @@ class _PlayerState extends State<Player> {
                           ),
                           Spacer(),
                           Text(
-                            '3:51',
+                            '6:30',
                             textAlign: TextAlign.end,
                             style: TextStyle(
                               color: Color(0xFF616E84),
