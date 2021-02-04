@@ -46,23 +46,23 @@ class Sidebar extends StatelessWidget {
                       Column(
                         children: <Widget>[
                           SidebarTile(
-                            title: 'Pure fight!!1 🔥',
+                            title: 'Kuduro!!! 🔥',
                             isActive: true,
                           ),
                           SidebarTile(
-                            title: 'Inspired 🦄',
+                            title: 'Afro House 🦄',
                             isActive: true,
                           ),
                           SidebarTile(
-                            title: 'Nostalgia',
+                            title: 'Kizomba',
                             isActive: true,
                           ),
                           SidebarTile(
-                            title: 'Calm',
+                            title: 'Most played',
                             isActive: true,
                           ),
                           SidebarTile(
-                            title: 'Calm',
+                            title: 'Recently played',
                             isActive: true,
                           ),
                           SidebarTile(
@@ -88,9 +88,8 @@ class Sidebar extends StatelessWidget {
                             MaterialPageRoute(
                               builder: (context) {
                                 return ImagePreview(
-                                  image: 'assets/now_playing.jpg',
-                                  tag: 'current-cover'
-                                );
+                                    image: 'assets/babulla-cover.jpg',
+                                    tag: 'current-cover');
                               },
                             ),
                           );
@@ -98,7 +97,7 @@ class Sidebar extends StatelessWidget {
                         child: Hero(
                           tag: 'current-cover',
                           child: SidebarCover(
-                            image: 'assets/now_playing.jpg',
+                            image: 'assets/babulla-cover.jpg',
                           ),
                         ),
                       ),
@@ -111,7 +110,7 @@ class Sidebar extends StatelessWidget {
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: <Widget>[
                             Text(
-                              'So Heavy I Fell Through the Earth',
+                              'Babulla (Original Mix)',
                               style: TextStyle(
                                 color: Color(0xFFC4C1C2),
                                 fontWeight: FontWeight.bold,
@@ -121,7 +120,7 @@ class Sidebar extends StatelessWidget {
                               height: 5,
                             ),
                             Text(
-                              'Grimes',
+                              'Wilson Kentura, Tiuze Money, Mil Tokes Portuga',
                               style: TextStyle(
                                 color: Color(0xFF4E586B),
                                 fontWeight: FontWeight.bold,
