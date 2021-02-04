@@ -38,6 +38,7 @@ class SidebarCover extends StatelessWidget {
         borderRadius: BorderRadius.circular(15),
         child: Image.asset(
           image,
+          filterQuality: FilterQuality.low,
           fit: BoxFit.cover,
           width: width,
           height: height,

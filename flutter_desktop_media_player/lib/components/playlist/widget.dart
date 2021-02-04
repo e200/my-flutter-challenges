@@ -34,7 +34,7 @@ class _PlaylistState extends State<Playlist> {
         Container(
           height: 340,
           child: BlurImage(
-            image: 'assets/playlist.jpg',
+            image: 'assets/malembe-cover.jpg',
           ),
         ),
         Padding(
@@ -67,7 +67,7 @@ class _PlaylistState extends State<Playlist> {
                     child: Container(
                       padding: const EdgeInsets.all(10),
                       child: Text(
-                        'Artiste',
+                        'Artist',
                         overflow: TextOverflow.ellipsis,
                       ),
                     ),
@@ -109,13 +109,15 @@ class _PlaylistState extends State<Playlist> {
                     borderRadius: BorderRadius.circular(5),
                   ),
                   children: [
-                    PlaylistTableCell(text: _music.title),
-                    PlaylistTableCell(text: _music.artist),
-                    PlaylistTableCell(text: _music.album),
-                    PlaylistTableCell(text: _music.createdAt),
-                    PlaylistTableCell(
-                      text: _music.duration,
-                      textAlign: TextAlign.right,
+                    TableCell(child: PlaylistTableCell(text: _music.title)),
+                    TableCell(child: PlaylistTableCell(text: _music.artist)),
+                    TableCell(child: PlaylistTableCell(text: _music.album)),
+                    TableCell(child: PlaylistTableCell(text: _music.createdAt)),
+                    TableCell(
+                      child: PlaylistTableCell(
+                        text: _music.duration,
+                        textAlign: TextAlign.right,
+                      ),
                     ),
                   ],
                 ),
@@ -210,14 +212,12 @@ class PlaylistTableCell extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MouseRegion(
-      child: TableCell(
-        child: Container(
-          padding: const EdgeInsets.all(10),
-          child: Text(
-            text,
-            overflow: TextOverflow.ellipsis,
-            textAlign: textAlign,
-          ),
+      child: Container(
+        padding: const EdgeInsets.all(10),
+        child: Text(
+          text,
+          overflow: TextOverflow.ellipsis,
+          textAlign: textAlign,
         ),
       ),
     );
@@ -241,7 +241,7 @@ class PlaylistHeader extends StatelessWidget {
               MaterialPageRoute(
                 builder: (context) {
                   return ImagePreview(
-                    image: 'assets/playlist.jpg',
+                    image: 'assets/malembe-cover.jpg',
                     tag: 'cover-playlist',
                   );
                 },
@@ -251,7 +251,7 @@ class PlaylistHeader extends StatelessWidget {
           child: Hero(
             tag: 'cover-playlist',
             child: SidebarCover(
-              image: 'assets/playlist.jpg',
+              image: 'assets/malembe-cover.jpg',
               width: 200,
               height: 200,
             ),
@@ -263,13 +263,16 @@ class PlaylistHeader extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Text(
-                'Pure fight!!1 🔥',
-                style: TextStyle(fontSize: 48),
+                'Malembe',
+                style: TextStyle(
+                  fontSize: 54,
+                  color: Colors.white,
+                ),
               ),
               Wrap(
                 children: [
                   Text(
-                    'Created by',
+                    'By',
                     style: TextStyle(
                         color: Theme.of(context)
                             .textTheme
@@ -280,7 +283,7 @@ class PlaylistHeader extends StatelessWidget {
                   SizedBox(
                     width: 5,
                   ),
-                  Text('Wolfgang Mozart'),
+                  Text('Wilson Kentura & Afro Warriors'),
                 ],
               ),
             ],
