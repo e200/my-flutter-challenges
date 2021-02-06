@@ -1,3 +1,4 @@
+import 'package:flutter/rendering.dart';
 import 'package:flutter/widgets.dart';
 
 class SidebarTile extends StatefulWidget {
@@ -53,6 +54,7 @@ class _SidebarTileState extends State<SidebarTile>
   @override
   Widget build(BuildContext context) {
     return MouseRegion(
+      cursor: SystemMouseCursors.click,
       onHover: (event) {
         if (!widget.isReadOnly && !_isHover) {
           setState(() {
