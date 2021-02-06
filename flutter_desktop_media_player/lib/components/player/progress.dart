@@ -12,7 +12,6 @@ class _PlayerProgressState extends State<PlayerProgress> {
       children: <Widget>[
         Container(
           height: 4,
-          width: MediaQuery.of(context).size.width - 60,
           decoration: BoxDecoration(
             color: Color(0xFF303846),
             borderRadius: BorderRadius.circular(10),
@@ -20,7 +19,7 @@ class _PlayerProgressState extends State<PlayerProgress> {
         ),
         Container(
           height: 4,
-          width: MediaQuery.of(context).size.width / 1.50 - 60,
+          width: 500,
           decoration: BoxDecoration(
             color: Color(0xFF616E84),
             borderRadius: BorderRadius.circular(10),
