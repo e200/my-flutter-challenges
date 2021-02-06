@@ -3,9 +3,10 @@ import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:flutter/widgets.dart';
-import 'package:flutter_desktop_media_player/components/image_preview.dart';
+import 'package:flutter_desktop_media_player/ui/screens/track_preview.dart';
 import 'package:flutter_desktop_media_player/components/sidebar/sidebar_cover.dart';
-import 'package:flutter_desktop_media_player/data/music.dart';
+import 'package:flutter_desktop_media_player/data/track.dart';
+import 'package:flutter_desktop_media_player/ui/widgets/blur.dart';
 
 class Playlist extends StatefulWidget {
   @override
@@ -13,28 +14,15 @@ class Playlist extends StatefulWidget {
 }
 
 class _PlaylistState extends State<Playlist> {
-  List<Music> _library = [];
-  MusicRepository _musicRepository;
-
-  bool _isLoading = false;
-
-  @override
-  void initState() {
-    _musicRepository = MusicRepository();
-
-    _load();
-
-    super.initState();
-  }
-
   @override
   Widget build(BuildContext context) {
     return ListView(
+      physics: BouncingScrollPhysics(),
       children: <Widget>[
         Container(
           height: 340,
           child: BlurImage(
-            image: 'assets/malembe-cover.jpg',
+            image: tracks.last.coverUrl,
           ),
         ),
         Padding(
@@ -102,7 +90,7 @@ class _PlaylistState extends State<Playlist> {
                   ),
                 ],
               ),
-              for (Music _music in _library)
+              for (Track _music in tracks)
                 TableRow(
                   decoration: BoxDecoration(
                     // color: Color(0xFF1F2631),
@@ -126,22 +114,6 @@ class _PlaylistState extends State<Playlist> {
         )
       ],
     );
-  }
-
-  void _load() {
-    setState(() {
-      _isLoading = true;
-    });
-
-    _musicRepository.getAll().then((musics) {
-      setState(() {
-        _library.addAll(musics);
-      });
-    }).whenComplete(() {
-      setState(() {
-        _isLoading = false;
-      });
-    });
   }
 }
 
@@ -231,6 +203,8 @@ class PlaylistHeader extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final _track = tracks.last;
+
     return Row(
       crossAxisAlignment: CrossAxisAlignment.end,
       children: [
@@ -238,11 +212,29 @@ class PlaylistHeader extends StatelessWidget {
           onTap: () {
             Navigator.push(
               context,
-              MaterialPageRoute(
-                builder: (context) {
-                  return ImagePreview(
-                    image: 'assets/malembe-cover.jpg',
+              PageRouteBuilder(
+                opaque: false,
+                fullscreenDialog: true,
+                barrierDismissible: true,
+                pageBuilder: (
+                  context,
+                  animation,
+                  secondaryAnimation,
+                ) {
+                  return TrackPreview(
+                    track: _track,
                     tag: 'cover-playlist',
+                  );
+                },
+                transitionsBuilder: (
+                  context,
+                  animation,
+                  secondaryAnimation,
+                  child,
+                ) {
+                  return BlurLayer(
+                    animation: animation,
+                    child: child,
                   );
                 },
               ),
@@ -251,7 +243,7 @@ class PlaylistHeader extends StatelessWidget {
           child: Hero(
             tag: 'cover-playlist',
             child: SidebarCover(
-              image: 'assets/malembe-cover.jpg',
+              image: _track.coverUrl,
               width: 200,
               height: 200,
             ),
@@ -263,7 +255,7 @@ class PlaylistHeader extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Text(
-                'Malembe',
+                _track.title,
                 style: TextStyle(
                   fontSize: 54,
                   color: Colors.white,
@@ -283,12 +275,12 @@ class PlaylistHeader extends StatelessWidget {
                   SizedBox(
                     width: 5,
                   ),
-                  Text('Wilson Kentura & Afro Warriors'),
+                  Text(_track.artist),
                 ],
               ),
             ],
           ),
-        )
+        ),
       ],
     );
   }
