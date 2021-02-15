@@ -57,3 +57,77 @@ class _HomePageState extends State<HomePage> {
     );
   }
 }
+
+class MouseFollower extends ImplicitlyAnimatedWidget {
+  final Offset position;
+  final Widget child;
+
+  MouseFollower({
+    this.position,
+    this.child,
+  }) : super(
+          curve: Curves.easeOut,
+          duration: const Duration(milliseconds: 300),
+        );
+
+  @override
+  ImplicitlyAnimatedWidgetState createState() => _MouseFollowerState();
+}
+
+class _MouseFollowerState extends AnimatedWidgetBaseState<MouseFollower> {
+  Tween<Offset> _positionTween;
+
+  @override
+  Widget build(BuildContext context) {
+    return LayoutBuilder(
+      builder: (context, constrains) {
+        return CustomPaint(
+          size: Size(
+            constrains.maxWidth,
+            constrains.maxHeight,
+          ),
+          painter: MouseFollowerPaint(
+            radius: 80,
+            position: _positionTween.evaluate(animation),
+          ),
+          child: widget.child,
+        );
+      },
+    );
+  }
+
+  @override
+  void forEachTween(visitor) {
+    _positionTween = visitor(
+      _positionTween,
+      widget.position,
+      (value) => Tween<Offset>(
+        begin: value,
+      ),
+    );
+  }
+}
+
+class MouseFollowerPaint extends CustomPainter {
+  final double radius;
+  final Offset position;
+
+  MouseFollowerPaint({
+    this.position,
+    this.radius,
+  });
+
+  @override
+  void paint(Canvas canvas, Size size) {
+    canvas.drawCircle(
+      position,
+      radius,
+      Paint()
+        ..blendMode = BlendMode.difference
+        ..color = Colors.white,
+    );
+  }
+
+  @override
+  bool shouldRepaint(covariant CustomPainter oldDelegate) => false;
+}
