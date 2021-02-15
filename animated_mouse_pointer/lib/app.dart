@@ -1,5 +1,5 @@
-import 'package:animated_mouse_pointer/screens/home.dart';
 import 'package:flutter/material.dart';
+import 'package:pulse/pulse.dart';
 
 class AnimatedMousePointerApp extends StatelessWidget {
   @override
