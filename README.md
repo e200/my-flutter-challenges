@@ -20,5 +20,6 @@ Leave a ⭐ if you find this repo awesome 😊
 |[Video on Twitter](https://twitter.com/iam_e200/status/1277334514092605440)<br>[Video on LinkedIn](https://www.linkedin.com/feed/update/urn:li:activity:6682540431596654592/)|[Video on Twitter](https://twitter.com/iam_e200/status/1276417956638003200)<br>[Video on LinkedIn](https://www.linkedin.com/feed/update/urn:li:activity:6683107918067335168/)|
 
 |[Canvas Clock](clock)|[Infinite Scroll](infinite_scroll)|
+|:-:|:-:|
 |![Canvas Clock](clock/screenshots/screenshot.gif)|![Infinite Scroll](infinite_scroll/screenshots/screenshot.gif)|
 |A Clock built with Canvas (CustomPaint)<br>[YouTube tutorial](https://youtu.be/fchEcBc2D8A)|Infinite Scroll + REST API<br>[Medium article](https://medium.com/@e200/flutter-infinite-scroll-with-rest-api-2b11f64b9d02)|
