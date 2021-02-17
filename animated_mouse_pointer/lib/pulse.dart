@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:pulse/pulse.dart';
 
-class PulseAnimationPage extends StatefulWidget {
+class PulsePointerPage extends StatefulWidget {
   @override
-  _PulseAnimationPageState createState() => _PulseAnimationPageState();
+  _PulsePointerPageState createState() => _PulsePointerPageState();
 }
 
-class _PulseAnimationPageState extends State<PulseAnimationPage> {
+class _PulsePointerPageState extends State<PulsePointerPage> {
   final _colors = [
     Colors.black,
     Colors.white,
