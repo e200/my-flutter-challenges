@@ -12,7 +12,7 @@ Leave a ⭐ if you find this repo awesome 😊
 |[Twitter Desktop](twitter_desktop)|[Mouse Pointer Pulse](animated_mouse_pointer)|
 |:-:|:-:|
 |![Twitter Desktop](twitter_desktop/screenshots/screenshot.gif)|![Mouse Pointer Pulse](animated_mouse_pointer/screenshots/screenshot.gif)|
-|[Video on Twitter](https://twitter.com/iam_e200/status/1284572118206656513)<br>[Video on LinkedIn](https://www.linkedin.com/posts/iam-e200_flutter-flutterdesktop-flutterangola-activity-6690341558543228928-3VeJ)|
+|[Video on Twitter](https://twitter.com/iam_e200/status/1284572118206656513)<br>[Video on LinkedIn](https://www.linkedin.com/posts/iam-e200_flutter-flutterdesktop-flutterangola-activity-6690341558543228928-3VeJ)|[Video on YouTube](https://www.youtube.com/watch?v=KFJXwfb2puo)|
 
 |[Flutter Desktop Media Player](flutter_desktop_media_player)|[Facebook Desktop](facebook_desktop)|
 |:-:|:-:|
