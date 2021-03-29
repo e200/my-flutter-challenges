@@ -182,3 +182,24 @@ class _MouseTrailState extends State<MouseTrail>
   }
 }
 
+class MouseTrailPainter extends CustomPainter {
+  final Offset center;
+  final double radius;
+
+  MouseTrailPainter({
+    this.center,
+    this.radius,
+  });
+
+  @override
+  void paint(Canvas canvas, Size size) {
+    canvas.drawCircle(
+      center,
+      radius,
+      Paint()..color = Colors.black.withOpacity(.2),
+    );
+  }
+
+  @override
+  bool shouldRepaint(covariant CustomPainter oldDelegate) => true;
+}
