@@ -1,3 +1,5 @@
+import 'dart:math';
+
 import 'package:flutter/material.dart';
 
 void main() {
@@ -78,5 +80,22 @@ class _MouseTrailsState extends State<MouseTrails> {
       ),
     );
   }
+}
+
+class SourceBackgroundPainter extends CustomPainter {
+  @override
+  void paint(Canvas canvas, Size size) {
+    canvas.drawRect(
+      Rect.largest,
+      Paint()
+        ..colorFilter = ColorFilter.mode(
+          Colors.black,
+          BlendMode.dstOut,
+        ),
+    );
+  }
+
+  @override
+  bool shouldRepaint(covariant CustomPainter oldDelegate) => false;
 }
 
