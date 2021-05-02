@@ -1,3 +1,14 @@
+class MacbookColorScheme {
+  final String name;
+  final Color primary;
+  final Color trackpadBorderColor;
+
+  MacbookColorScheme({
+    this.name,
+    this.primary,
+    this.trackpadBorderColor,
+  });
+}
 
 class MacbookKey extends StatelessWidget {
   final double width;
