@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-final mackBookColor = Color(0xFFFFD8BF);
+final mackBookColor = Color(0xFFF8CDBC);
 
 void main() {
   runApp(MacbookKeyboardApp());
