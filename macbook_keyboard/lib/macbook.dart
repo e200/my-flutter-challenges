@@ -10,6 +10,44 @@ class MacbookColorScheme {
   });
 }
 
+class Macbook extends StatelessWidget {
+  final MacbookColorScheme colorScheme;
+
+  const Macbook({Key key, this.colorScheme}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return AnimatedContainer(
+      duration: const Duration(milliseconds: 300),
+      alignment: Alignment.topCenter,
+      width: 854,
+      height: 580,
+      padding: EdgeInsets.only(
+        left: 30,
+        top: 30,
+        right: 30,
+      ),
+      decoration: BoxDecoration(
+        color: colorScheme.primary,
+        borderRadius: BorderRadius.circular(35),
+        boxShadow: [
+          BoxShadow(
+            blurRadius: 2,
+            spreadRadius: 1,
+            color: Colors.black.withOpacity(.2),
+            offset: Offset(0, 2),
+          ),
+        ],
+      ),
+      child: Column(
+        children: [
+          MacbookKeyboard(backgroundColor: colorScheme.primary),
+          Center(child: TrackPad(color: colorScheme.trackpadBorderColor)),
+        ],
+      ),
+    );
+  }
+}
 class MacbookKey extends StatelessWidget {
   final double width;
   final double height;
