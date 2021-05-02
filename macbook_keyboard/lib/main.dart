@@ -92,7 +92,7 @@ class _MacbookKeyboardAppState extends State<MacbookKeyboardApp> {
 
 class _MacbookScaleSlider extends StatelessWidget {
   final double scale;
-  final Function(double scale) onChanged;
+  final ValueChanged<double> onChanged;
 
   const _MacbookScaleSlider({
     Key key,
@@ -120,7 +120,7 @@ class _MacbookScaleSlider extends StatelessWidget {
 }
 
 class _MacbookColorSchemeSelector extends StatelessWidget {
-  final Function(MacbookColorScheme colorScheme) onChanged;
+  final ValueChanged<MacbookColorScheme> onChanged;
 
   const _MacbookColorSchemeSelector({
     Key key,
