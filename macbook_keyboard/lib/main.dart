@@ -28,6 +28,7 @@ final List<MacbookColorScheme> _macbookColors = [
 void main() {
   runApp(MacbookKeyboardApp());
 }
+
 class MacbookKeyboardApp extends StatefulWidget {
   static final appTitle = 'Macbook Keyboard';
 
@@ -72,10 +73,10 @@ class _MacbookKeyboardAppState extends State<MacbookKeyboardApp> {
             Padding(
               padding: const EdgeInsets.all(30),
               child: _MacbookScaleSlider(
-                scale: scale,
-                onChanged: (scale) {
+                value: scale,
+                onChanged: (value) {
                   setState(() {
-                    scale = scale;
+                    scale = value;
                   });
                 },
               ),
@@ -88,15 +89,13 @@ class _MacbookKeyboardAppState extends State<MacbookKeyboardApp> {
   }
 }
 
-
-
 class _MacbookScaleSlider extends StatelessWidget {
-  final double scale;
+  final double value;
   final ValueChanged<double> onChanged;
 
   const _MacbookScaleSlider({
     Key key,
-    @required this.scale,
+    @required this.value,
     @required this.onChanged,
   }) : super(key: key);
 
@@ -111,7 +110,7 @@ class _MacbookScaleSlider extends StatelessWidget {
           activeColor: Colors.grey.shade300,
           min: .8,
           max: 1.2,
-          value: scale,
+          value: value,
           onChanged: onChanged,
         ),
       ),
