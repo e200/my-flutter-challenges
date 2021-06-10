@@ -588,7 +588,7 @@ class SingleCharKey extends StatelessWidget {
   final double width;
   final double height;
   final String char;
-  final Function() onPressed;
+  final VoidCallback onPressed;
 
   const SingleCharKey({
     Key key,
@@ -623,7 +623,7 @@ class MultiCharKey extends StatelessWidget {
   final Alignment alignment;
   final double width;
   final double height;
-  final Function() onPressed;
+  final VoidCallback onPressed;
 
   MultiCharKey({
     Key key,
@@ -666,7 +666,7 @@ class SpecialKey extends StatelessWidget {
   final String label;
   final double width;
   final double height;
-  final Function() onPressed;
+  final VoidCallback onPressed;
 
   const SpecialKey({
     Key key,
@@ -706,7 +706,7 @@ class MacbookKey extends StatelessWidget {
   final double height;
   final Widget child;
   final Alignment alignment;
-  final Function() onPressed;
+  final VoidCallback onPressed;
 
   MacbookKey({
     Key key,
