@@ -661,6 +661,7 @@ class MultiCharKey extends StatelessWidget {
     );
   }
 }
+
 class SpecialKey extends StatelessWidget {
   final String symbol;
   final String label;
