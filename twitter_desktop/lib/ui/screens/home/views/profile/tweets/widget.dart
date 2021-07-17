@@ -38,10 +38,8 @@ class _ProfileTweetsState extends State<ProfileTweets>
             ],
           ),
           SizedBox(
-            height: 500,
             child: TabBarView(
               controller: _tabController,
-              physics: NeverScrollableScrollPhysics(),
               children: [
                 TweetsList(),
                 TweetsList(),

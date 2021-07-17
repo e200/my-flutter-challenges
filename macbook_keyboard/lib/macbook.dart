@@ -663,6 +663,7 @@ class MultiCharKey extends StatelessWidget {
 }
 
 class SpecialKey extends StatelessWidget {
+  final Alignment alignment;
   final String symbol;
   final String label;
   final double width;
@@ -671,6 +672,7 @@ class SpecialKey extends StatelessWidget {
 
   const SpecialKey({
     Key key,
+    this.alignment,
     this.label,
     this.symbol,
     this.height,
@@ -681,6 +683,7 @@ class SpecialKey extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MacbookKey(
+      alignment: alignment,
       onPressed: onPressed,
       width: width,
       height: height,
