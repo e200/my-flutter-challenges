@@ -9,12 +9,13 @@ class ParallaxDevilApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Parallax Devil',
+      home: ParallaxDevil(),
     );
   }
 }
 
-class MyHomePage extends StatefulWidget {
-  MyHomePage({Key? key, required this.title}) : super(key: key);
+class ParallaxDevil extends StatelessWidget {
+  ParallaxDevil({Key? key}) : super(key: key);
 
   // This widget is the home page of your application. It is stateful, meaning
   // that it has a State object (defined below) that contains fields that affect
@@ -89,6 +90,10 @@ class _MyHomePageState extends State<MyHomePage> {
           ],
         ),
       ),
+    );
+  }
+}
+
 class PerspectiveLayer extends StatelessWidget {
   final BorderRadius? borderRadius;
   final Offset offset;
