@@ -21,13 +21,8 @@ class ParallaxDevil extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    // This method is rerun every time setState is called, for instance as done
-    // by the _incrementCounter method above.
-    //
-    // The Flutter framework has been optimized to make rerunning build methods
-    // fast, so that you can just rebuild anything that needs updating rather
-    // than having to individually change instances of widgets.
     return Scaffold(
+      body: MouseRegion(
         onHover: (event) {
           final _screenWidth = MediaQuery.of(context).size.width;
           final _screenHeight = MediaQuery.of(context).size.height;
@@ -42,6 +37,12 @@ class ParallaxDevil extends StatelessWidget {
         onExit: (event) {
           _localOffsetNotifier.value = Offset.zero;
         },
+        child: Center(
+          child: ValueListenableBuilder(
+            valueListenable: _localOffsetNotifier,
+            builder: (context, Offset value, _) {
+              return ConstrainedBox(
+                constraints: BoxConstraints(maxWidth: 1024),
                 child: Stack(
                   clipBehavior: Clip.none,
                   children: List.generate(
@@ -68,11 +69,9 @@ class ParallaxDevil extends StatelessWidget {
                     },
                   ),
                 ),
-            Text(
-              '$_counter',
-              style: Theme.of(context).textTheme.headline4,
-            ),
-          ],
+              );
+            },
+          ),
         ),
       ),
     );
