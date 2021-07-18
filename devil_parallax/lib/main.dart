@@ -48,11 +48,12 @@ class ParallaxDevil extends StatelessWidget {
                     maxWidth: 1024,
                     maxHeight: 576,
                   ),
-                    clipBehavior: Clip.none,
-                    children: List.generate(
-                      5,
-                      (index) {
-                        return PerspectiveLayer(
+                  child: Transform(
+                    alignment: FractionalOffset.center,
+                    transform: Matrix4.identity()
+                      ..setEntry(3, 2, 0.002)
+                      ..rotateY(0.0003 * value.dy)
+                      ..rotateX(0.0003 * value.dx),
                           borderRadius: BorderRadius.circular(30),
                           offset: Offset(
                             (index * .03) * value.dx,
