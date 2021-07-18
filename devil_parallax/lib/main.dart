@@ -58,23 +58,27 @@ class ParallaxDevil extends StatelessWidget {
                         image: DecorationImage(
                           image: AssetImage('assets/0.png'),
                         ),
-                          offset: Offset(
-                            (index * .03) * value.dx,
-                            (index * .08) * value.dy,
-                          ),
-                          child: Transform(
-                            alignment: FractionalOffset.center,
-                            transform: Matrix4.identity()
-                              ..setEntry(3, 2, 0.002)
-                              ..rotateY(0.0003 * value.dy)
-                              ..rotateX(0.0003 * value.dx),
-                            child: Image.asset(
-                              'assets/$index.png',
-                              fit: BoxFit.cover,
-                            ),
-                          ),
-                        );
-                      },
+                      ),
+                      child: Stack(
+                        alignment: Alignment.center,
+                        children: List.generate(
+                          5,
+                          (index) {
+                            return PerspectiveLayer(
+                              offset: Offset(
+                                (index * .03) * value.dx,
+                                (index * .08) * value.dy,
+                              ),
+                              child: Container(
+                                decoration: BoxDecoration(
+                                  borderRadius: BorderRadius.circular(30),
+                                  image: DecorationImage(
+                                    image: AssetImage('assets/$index.png'),
+                                  ),
+                                ),
+                              ),
+                            );
+                          },
                         ),
                       ),
                     ),
