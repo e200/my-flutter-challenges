@@ -22,22 +22,22 @@ class ParallaxDevil extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: MouseRegion(
-        onHover: (event) {
-          final _screenWidth = MediaQuery.of(context).size.width;
-          final _screenHeight = MediaQuery.of(context).size.height;
-          final _centerX = _screenWidth / 2;
-          final _centerY = _screenHeight / 2;
+      body: Center(
+        child: MouseRegion(
+          onHover: (event) {
+            final _screenWidth = MediaQuery.of(context).size.width;
+            final _screenHeight = MediaQuery.of(context).size.height;
+            final _centerX = _screenWidth / 2;
+            final _centerY = _screenHeight / 2;
 
-          _localOffsetNotifier.value = Offset(
-            (_centerX - event.position.dx) / 2,
-            -((_centerY - event.position.dy) / 2),
-          );
-        },
-        onExit: (event) {
-          _localOffsetNotifier.value = Offset.zero;
-        },
-        child: Center(
+            _localOffsetNotifier.value = Offset(
+              (_centerX - event.position.dx) / 2,
+              -((_centerY - event.position.dy) / 2),
+            );
+          },
+          onExit: (event) {
+            _localOffsetNotifier.value = Offset.zero;
+          },
           child: Padding(
             padding: const EdgeInsets.all(35),
             child: ValueListenableBuilder(
@@ -69,6 +69,8 @@ class ParallaxDevil extends StatelessWidget {
                           ),
                         );
                       },
+                        ),
+                      ),
                     ),
                   ),
                 );
