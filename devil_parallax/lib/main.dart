@@ -38,39 +38,42 @@ class ParallaxDevil extends StatelessWidget {
           _localOffsetNotifier.value = Offset.zero;
         },
         child: Center(
-          child: ValueListenableBuilder(
-            valueListenable: _localOffsetNotifier,
-            builder: (context, Offset value, _) {
-              return ConstrainedBox(
-                constraints: BoxConstraints(maxWidth: 1024),
-                child: Stack(
-                  clipBehavior: Clip.none,
-                  children: List.generate(
-                    5,
-                    (index) {
-                      return PerspectiveLayer(
-                        borderRadius: BorderRadius.circular(30),
-                        offset: Offset(
-                          (index * .03) * value.dx,
-                          (index * .08) * value.dy,
-                        ),
-                        child: Transform(
-                          alignment: FractionalOffset.center,
-                          transform: Matrix4.identity()
-                            ..setEntry(3, 2, 0.002)
-                            ..rotateY(0.0003 * value.dy)
-                            ..rotateX(0.0003 * value.dx),
-                          child: Image.asset(
-                            'assets/$index.png',
-                            fit: BoxFit.cover,
+          child: Padding(
+            padding: const EdgeInsets.all(35),
+            child: ValueListenableBuilder(
+              valueListenable: _localOffsetNotifier,
+              builder: (context, Offset value, _) {
+                return ConstrainedBox(
+                  constraints: BoxConstraints(maxWidth: 1024),
+                  child: Stack(
+                    clipBehavior: Clip.none,
+                    children: List.generate(
+                      5,
+                      (index) {
+                        return PerspectiveLayer(
+                          borderRadius: BorderRadius.circular(30),
+                          offset: Offset(
+                            (index * .03) * value.dx,
+                            (index * .08) * value.dy,
                           ),
-                        ),
-                      );
-                    },
+                          child: Transform(
+                            alignment: FractionalOffset.center,
+                            transform: Matrix4.identity()
+                              ..setEntry(3, 2, 0.002)
+                              ..rotateY(0.0003 * value.dy)
+                              ..rotateX(0.0003 * value.dx),
+                            child: Image.asset(
+                              'assets/$index.png',
+                              fit: BoxFit.cover,
+                            ),
+                          ),
+                        );
+                      },
+                    ),
                   ),
-                ),
-              );
-            },
+                );
+              },
+            ),
           ),
         ),
       ),
