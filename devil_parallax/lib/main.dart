@@ -55,6 +55,9 @@ class ParallaxDevil extends StatelessWidget {
                       ..rotateY(0.0003 * value.dy)
                       ..rotateX(0.0003 * value.dx),
                           borderRadius: BorderRadius.circular(30),
+                        image: DecorationImage(
+                          image: AssetImage('assets/0.png'),
+                        ),
                           offset: Offset(
                             (index * .03) * value.dx,
                             (index * .08) * value.dy,
