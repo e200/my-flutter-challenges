@@ -14,10 +14,28 @@ class ParallaxDevilApp extends StatelessWidget {
   }
 }
 
-class ParallaxDevil extends StatelessWidget {
+class ParallaxDevil extends StatefulWidget {
   ParallaxDevil({Key? key}) : super(key: key);
 
-  final _localOffsetNotifier = ValueNotifier(Offset.zero);
+  @override
+  _ParallaxDevilState createState() => _ParallaxDevilState();
+}
+
+class _ParallaxDevilState extends State<ParallaxDevil>
+    with SingleTickerProviderStateMixin {
+  late Tween<Offset> _offsetTween;
+  late Animation<Offset> _animation;
+  late AnimationController _animationController;
+
+  @override
+  void initState() {
+    _animationController = AnimationController(vsync: this, value: 0);
+
+    _offsetTween = Tween<Offset>(begin: Offset.zero, end: Offset.zero);
+    _animation = _offsetTween.animate(_animationController);
+
+    super.initState();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -30,19 +48,33 @@ class ParallaxDevil extends StatelessWidget {
             final _centerX = _screenWidth / 2;
             final _centerY = _screenHeight / 2;
 
-            _localOffsetNotifier.value = Offset(
+            final _perspectivePointer = Offset(
               (_centerX - event.position.dx) / 2,
               -((_centerY - event.position.dy) / 2),
             );
+
+            _offsetTween.begin = _offsetTween.end;
+            _animationController.duration = Duration.zero;
+            _animationController.reset();
+
+            _offsetTween.end = _perspectivePointer;
+            _animationController.forward();
           },
           onExit: (event) {
-            _localOffsetNotifier.value = Offset.zero;
+            _offsetTween.begin = _offsetTween.end;
+            _animationController.reset();
+
+            _offsetTween.end = Offset.zero;
+            _animationController.duration = const Duration(milliseconds: 500);
+            _animationController.forward();
           },
           child: Padding(
             padding: const EdgeInsets.all(30),
-            child: ValueListenableBuilder(
-              valueListenable: _localOffsetNotifier,
-              builder: (context, Offset value, _) {
+            child: AnimatedBuilder(
+              animation: _animation,
+              builder: (context, _) {
+                final value = _animation.value;
+
                 return ConstrainedBox(
                   constraints: BoxConstraints(
                     maxWidth: 1024,
