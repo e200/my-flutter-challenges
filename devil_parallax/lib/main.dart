@@ -28,11 +28,20 @@ class ParallaxDevil extends StatelessWidget {
     // fast, so that you can just rebuild anything that needs updating rather
     // than having to individually change instances of widgets.
     return Scaffold(
-      appBar: AppBar(
-        // Here we take the value from the MyHomePage object that was created by
-        // the App.build method, and use it to set our appbar title.
-        title: Text(widget.title),
-      ),
+        onHover: (event) {
+          final _screenWidth = MediaQuery.of(context).size.width;
+          final _screenHeight = MediaQuery.of(context).size.height;
+          final _centerX = _screenWidth / 2;
+          final _centerY = _screenHeight / 2;
+
+          _localOffsetNotifier.value = Offset(
+            (_centerX - event.position.dx) / 2,
+            -((_centerY - event.position.dy) / 2),
+          );
+        },
+        onExit: (event) {
+          _localOffsetNotifier.value = Offset.zero;
+        },
       body: Center(
         // Center is a layout widget. It takes a single child and positions it
         // in the middle of the parent.
