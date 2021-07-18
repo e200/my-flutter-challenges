@@ -44,8 +44,10 @@ class ParallaxDevil extends StatelessWidget {
               valueListenable: _localOffsetNotifier,
               builder: (context, Offset value, _) {
                 return ConstrainedBox(
-                  constraints: BoxConstraints(maxWidth: 1024),
-                  child: Stack(
+                  constraints: BoxConstraints(
+                    maxWidth: 1024,
+                    maxHeight: 576,
+                  ),
                     clipBehavior: Clip.none,
                     children: List.generate(
                       5,
