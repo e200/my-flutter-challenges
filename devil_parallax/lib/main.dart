@@ -103,11 +103,23 @@ class _MyHomePageState extends State<MyHomePage> {
           ],
         ),
       ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: _incrementCounter,
-        tooltip: 'Increment',
-        child: Icon(Icons.add),
-      ), // This trailing comma makes auto-formatting nicer for build methods.
+class PerspectiveLayer extends StatelessWidget {
+  final BorderRadius? borderRadius;
+  final Offset offset;
+  final Widget child;
+
+  const PerspectiveLayer({
+    Key? key,
+    this.borderRadius,
+    required this.offset,
+    required this.child,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Transform.translate(
+      offset: offset,
+      child: child,
     );
   }
 }
