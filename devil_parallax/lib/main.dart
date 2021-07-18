@@ -87,17 +87,14 @@ class ParallaxDevil extends StatelessWidget {
 }
 
 class PerspectiveLayer extends StatelessWidget {
-  final BorderRadius? borderRadius;
   final Offset offset;
   final Widget child;
 
-  const PerspectiveLayer({
+  PerspectiveLayer({
     Key? key,
-    this.borderRadius,
     required this.offset,
     required this.child,
   }) : super(key: key);
-
   @override
   Widget build(BuildContext context) {
     return Transform.translate(
