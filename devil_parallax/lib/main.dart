@@ -23,11 +23,20 @@ class ParallaxDevil extends StatefulWidget {
 
 class _ParallaxDevilState extends State<ParallaxDevil>
     with TickerProviderStateMixin {
+  late Animation<double> _animation;
   late AnimationController _animationController;
 
   @override
   void initState() {
-    _animationController = AnimationController(vsync: this, value: 0);
+    _animationController = AnimationController(
+      vsync: this,
+      duration: const Duration(milliseconds: 500),
+    );
+
+    _animation = Tween<double>(begin: 0, end: 1).animate(
+      CurvedAnimation(parent: _animationController, curve: Curves.ease),
+    );
+
 
     _offsetTween = Tween<Offset>(begin: Offset.zero, end: Offset.zero);
     _animation = _offsetTween.animate(_animationController);
@@ -36,15 +45,7 @@ class _ParallaxDevilState extends State<ParallaxDevil>
   }
 
   @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      body: Center(
-        child: MouseRegion(
-          onHover: (event) {
-            final _screenWidth = MediaQuery.of(context).size.width;
-            final _screenHeight = MediaQuery.of(context).size.height;
-            final _centerX = _screenWidth / 2;
-            final _centerY = _screenHeight / 2;
+    _animationController.dispose();
 
             final _perspectivePointer = Offset(
               (_centerX - event.position.dx) / 2,
