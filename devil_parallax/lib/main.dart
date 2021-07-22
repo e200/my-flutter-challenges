@@ -22,9 +22,7 @@ class ParallaxDevil extends StatefulWidget {
 }
 
 class _ParallaxDevilState extends State<ParallaxDevil>
-    with SingleTickerProviderStateMixin {
-  late Tween<Offset> _offsetTween;
-  late Animation<Offset> _animation;
+    with TickerProviderStateMixin {
   late AnimationController _animationController;
 
   @override
