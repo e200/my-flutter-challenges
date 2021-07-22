@@ -130,19 +130,28 @@ class _ParallaxDevilState extends State<ParallaxDevil>
 }
 
 class PerspectiveLayer extends StatelessWidget {
+  final String imageSrc;
   final Offset offset;
-  final Widget child;
 
-  PerspectiveLayer({
+  const PerspectiveLayer({
     Key? key,
+    required this.imageSrc,
     required this.offset,
-    required this.child,
   }) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return Transform.translate(
       offset: offset,
-      child: child,
+      child: Container(
+        decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(30),
+          image: DecorationImage(
+            image: AssetImage(imageSrc),
+            fit: BoxFit.cover,
+          ),
+        ),
+      ),
     );
   }
 }
