@@ -26,6 +26,10 @@ class _ParallaxDevilState extends State<ParallaxDevil>
   late Animation<double> _animation;
   late AnimationController _animationController;
 
+  late Tween<Offset> _offsetTween;
+  late Animation<Offset> _offsetAnimation;
+  late AnimationController _offsetAnimationController;
+
   @override
   void initState() {
     _animationController = AnimationController(
@@ -37,15 +41,27 @@ class _ParallaxDevilState extends State<ParallaxDevil>
       CurvedAnimation(parent: _animationController, curve: Curves.ease),
     );
 
+    _offsetAnimationController = AnimationController(
+      vsync: this,
+      duration: const Duration(milliseconds: 500),
+    );
 
     _offsetTween = Tween<Offset>(begin: Offset.zero, end: Offset.zero);
-    _animation = _offsetTween.animate(_animationController);
+
+    _offsetAnimation = _offsetTween.animate(
+      CurvedAnimation(parent: _offsetAnimationController, curve: Curves.ease),
+    );
 
     super.initState();
   }
 
   @override
+  void dispose() {
+    super.dispose();
+
     _animationController.dispose();
+    _offsetAnimationController.dispose();
+  }
 
             final _perspectivePointer = Offset(
               (_centerX - event.position.dx) / 2,
