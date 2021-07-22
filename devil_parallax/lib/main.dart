@@ -78,26 +78,41 @@ class _ParallaxDevilState extends State<ParallaxDevil>
 
     return _perspectivePointer;
   }
-            _offsetTween.begin = _offsetTween.end;
-            _animationController.duration = Duration.zero;
-            _animationController.reset();
+            onEnter: (event) {
+              _offsetTween.begin = _offsetTween.end;
+              _offsetAnimationController.reset();
 
-            _offsetTween.end = _perspectivePointer;
-            _animationController.forward();
-          },
-          onExit: (event) {
-            _offsetTween.begin = _offsetTween.end;
-            _animationController.reset();
+              _offsetTween.end = getPerspectivePointer(event.position);
+              _offsetAnimationController.forward();
 
-            _offsetTween.end = Offset.zero;
-            _animationController.duration = const Duration(milliseconds: 500);
-            _animationController.forward();
-          },
-          child: Padding(
-            padding: const EdgeInsets.all(30),
-            child: AnimatedBuilder(
-              animation: _animation,
-              builder: (context, _) {
+              _animationController.forward();
+            },
+            onHover: (event) {
+              /// This prevents the image from jump instantly from
+              /// the offset given by the onEnter event to the offset
+              /// of the onHover event (kind of conflit)
+              if (_animation.status != AnimationStatus.forward) {
+                _offsetAnimationController.duration = Duration.zero;
+              }
+
+              _offsetTween.begin = _offsetTween.end;
+              _offsetAnimationController.reset();
+
+              _offsetTween.end = getPerspectivePointer(event.position);
+              _offsetAnimationController.forward();
+            },
+            onExit: (event) {
+              _offsetAnimationController.duration =
+                  const Duration(milliseconds: 500);
+
+              _offsetTween.begin = _offsetTween.end;
+              _offsetAnimationController.reset();
+
+              _offsetTween.end = Offset.zero;
+              _offsetAnimationController.forward();
+
+              _animationController.reverse();
+            },
                 final value = _animation.value;
 
                 return Transform(
