@@ -78,6 +78,14 @@ class _ParallaxDevilState extends State<ParallaxDevil>
 
     return _perspectivePointer;
   }
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      body: Center(
+        child: Padding(
+          padding: const EdgeInsets.all(30),
+          child: MouseRegion(
             onEnter: (event) {
               _offsetTween.begin = _offsetTween.end;
               _offsetAnimationController.reset();
@@ -113,55 +121,74 @@ class _ParallaxDevilState extends State<ParallaxDevil>
 
               _animationController.reverse();
             },
-                final value = _animation.value;
+            child: Padding(
+              padding: const EdgeInsets.all(30),
+              child: AnimatedBuilder(
+                animation: _animation,
+                builder: (context, _) {
+                  return AnimatedBuilder(
+                    animation: _offsetAnimation,
+                    builder: (context, _) {
+                      final _animatedOffset = _offsetAnimation.value * _animation.value;
 
-                return Transform(
-                  alignment: FractionalOffset.center,
-                  transform: Matrix4.identity()
-                    ..setEntry(3, 2, 0.002)
-                    ..rotateY(0.0003 * value.dy)
-                    ..rotateX(0.0003 * value.dx),
-                  child: Container(
-                    constraints: BoxConstraints(
-                      maxWidth: 1024,
-                      maxHeight: 576,
-                    ),
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(30),
-                      boxShadow: [
-                        BoxShadow(
-                          color: Colors.black.withOpacity(.3),
-                          spreadRadius: 5,
-                          blurRadius: 15,
-                        ),
-                      ],
-                    ),
-                    child: Stack(
-                      alignment: Alignment.center,
-                      children: List.generate(
-                        5,
-                        (index) {
-                          return PerspectiveLayer(
-                            offset: Offset(
-                              (index * .03) * value.dx,
-                              (index * .08) * value.dy,
-                            ),
-                            child: Container(
-                              decoration: BoxDecoration(
-                                borderRadius: BorderRadius.circular(30),
-                                image: DecorationImage(
-                                  image: AssetImage('assets/$index.png'),
-                                  fit: BoxFit.cover,
+                      return Transform(
+                        alignment: FractionalOffset.center,
+                        transform: Matrix4.identity()
+                          ..setEntry(3, 2, 0.002)
+                          ..rotateY(0.0003 * _animatedOffset.dx)
+                          ..rotateX(0.0003 * _animatedOffset.dy),
+                        child: Container(
+                          constraints: const BoxConstraints(
+                            maxWidth: 1024,
+                            maxHeight: 576,
+                          ),
+                          decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(30),
+                            boxShadow: [
+                              BoxShadow(
+                                color: Colors.black.withOpacity(.3),
+                                spreadRadius: 5,
+                                blurRadius: 15,
+                              ),
+                            ],
+                          ),
+                          child: Stack(
+                            alignment: Alignment.center,
+                            children: [
+                              PerspectiveLayer(
+                                imageSrc: 'assets/0.png',
+                                offset: Offset(
+                                  .03 * _animatedOffset.dx,
+                                  .03 * _animatedOffset.dy,
                                 ),
                               ),
-                            ),
-                          );
-                        },
-                      ),
-                    ),
-                  ),
-                );
-              },
+                              ...List.generate(
+                                4,
+                                (index) {
+                                  index++;
+
+                                  final _zoomScale = 0.08;
+
+                                  return Transform.scale(
+                                    scale: 1 + (_zoomScale * _animation.value),
+                                    child: PerspectiveLayer(
+                                      offset: Offset(
+                                        (index * .03) * _animatedOffset.dx,
+                                        (index * .03) * _animatedOffset.dy,
+                                      ),
+                                      imageSrc: 'assets/$index.png',
+                                    ),
+                                  );
+                                },
+                              ),
+                            ],
+                          ),
+                        ),
+                      );
+                    },
+                  );
+                },
+              ),
             ),
           ),
         ),
