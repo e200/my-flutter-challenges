@@ -63,11 +63,21 @@ class _ParallaxDevilState extends State<ParallaxDevil>
     _offsetAnimationController.dispose();
   }
 
-            final _perspectivePointer = Offset(
-              (_centerX - event.position.dx) / 2,
-              -((_centerY - event.position.dy) / 2),
-            );
+  Offset getPerspectivePointer(Offset offset) {
+    final _size = MediaQuery.of(context).size;
 
+    final _screenWidth = _size.width;
+    final _screenHeight = _size.height;
+    final _centerX = _screenWidth / 2;
+    final _centerY = _screenHeight / 2;
+
+    final _perspectivePointer = Offset(
+      (_centerX - offset.dx) / 2,
+      -((_centerY - offset.dy) / 2),
+    );
+
+    return _perspectivePointer;
+  }
             _offsetTween.begin = _offsetTween.end;
             _animationController.duration = Duration.zero;
             _animationController.reset();
