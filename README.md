@@ -9,10 +9,10 @@ Leave a ⭐ if you find this repo awesome 😊
 
 ## Challenges
 
-|[Macbook Keyboard](macbook_keyboard)|
-|:-:|
-|![Macbook Keyboard](macbook_keyboard/screenshots/screenshot.gif)|
-|[LinkedIn](https://www.linkedin.com/feed/update/urn:li:activity:6794703822909411328)<br>[YouTube](https://youtu.be/y4pM5knvAxM)|
+|[Parallax Devil](devil_parallax)|[Macbook Keyboard](macbook_keyboard)|
+|:-:|:-:|
+|![Parallax Devil](devil_parallax/screenshots/screenshot.gif)|![Macbook Keyboard](macbook_keyboard/screenshots/screenshot.gif)|
+|[LinkedIn](https://www.linkedin.com/feed/update/urn:li:activity:6794703822909411328)<br>[YouTube](https://youtu.be/y4pM5knvAxM)|[LinkedIn](https://www.linkedin.com/feed/update/urn:li:activity:6794703822909411328)<br>[YouTube](https://youtu.be/y4pM5knvAxM)|
 
 |[Twitter Desktop](twitter_desktop)|[Mouse Pointer Pulse](animated_mouse_pointer)|
 |:-:|:-:|
