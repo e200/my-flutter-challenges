@@ -12,7 +12,7 @@ Leave a ⭐ if you find this repo awesome 😊
 |[Parallax Devil](devil_parallax)|[Macbook Keyboard](macbook_keyboard)|
 |:-:|:-:|
 |![Parallax Devil](devil_parallax/screenshots/screenshot.gif)|![Macbook Keyboard](macbook_keyboard/screenshots/screenshot.gif)|
-|[LinkedIn](https://www.linkedin.com/feed/update/urn:li:activity:6824396561020145664/)<br>[YouTube](https://www.youtube.com/watch?v=eSM_YkWeS7k)|[LinkedIn](https://www.linkedin.com/feed/update/urn:li:activity:6794703822909411328)<br>[YouTube](https://youtu.be/y4pM5knvAxM)|
+|[LinkedIn](https://www.linkedin.com/feed/update/urn:li:activity:6824396561020145664/)<br>[YouTube](https://youtu.be/T2z12v54Ai4)|[LinkedIn](https://www.linkedin.com/feed/update/urn:li:activity:6794703822909411328)<br>[YouTube](https://youtu.be/y4pM5knvAxM)|
 
 |[Twitter Desktop](twitter_desktop)|[Mouse Pointer Pulse](animated_mouse_pointer)|
 |:-:|:-:|
