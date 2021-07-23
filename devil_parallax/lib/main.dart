@@ -167,7 +167,7 @@ class _ParallaxDevilState extends State<ParallaxDevil>
                                 (index) {
                                   index++;
 
-                                  final _zoomScale = 0.08;
+                                  final _zoomScale = 0.2;
 
                                   return Transform.scale(
                                     scale: 1 + (_zoomScale * _animation.value),
