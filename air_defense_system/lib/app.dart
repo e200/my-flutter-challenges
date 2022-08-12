@@ -11,7 +11,6 @@ class AirDefenseSystemApp extends StatelessWidget {
       title: 'Flutter Demo',
       theme: ThemeData.dark(),
       home: Scaffold(
-        backgroundColor: const Color.fromRGBO(32, 32, 32, 0),
         body: Center(
           child: Container(
             width: 500,
