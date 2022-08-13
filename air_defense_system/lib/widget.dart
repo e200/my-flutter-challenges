@@ -44,7 +44,7 @@ class _AirDefenseSystemState extends State<AirDefenseSystem> with SingleTickerPr
           animation: _animation,
           builder: (context, snapshot) {
             return Transform.rotate(
-              angle: _animation.value,
+              angle: -_animation.value,
               child: CustomPaint(
                 size: size,
                 painter: AirDefenseSystemBackgroundPainter(),
