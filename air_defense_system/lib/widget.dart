@@ -78,44 +78,17 @@ class AirDefenseSystemLinesPainter extends CustomPainter {
       ..strokeWidth = 1 / 100 * firstArcRadius
       ..style = PaintingStyle.stroke;
 
-    canvas.drawArc(
-      Rect.fromCircle(center: center, radius: firstArcRadius),
-      0,
-      2 * pi,
-      false,
-      paint,
-    );
-
-    canvas.drawArc(
-      Rect.fromCircle(center: center, radius: secondArcRadius),
-      0,
-      2 * pi,
-      false,
-      paint,
-    );
-
-    canvas.drawArc(
-      Rect.fromCircle(center: center, radius: thirdArcRadius),
-      0,
-      2 * pi,
-      false,
-      paint,
-    );
-
-    canvas.drawArc(
-      Rect.fromCircle(center: center, radius: fourthArcRadius),
-      0,
-      2 * pi,
-      false,
-      paint,
-    );
+    drawArc(canvas, center, firstArcRadius, paint);
+    drawArc(canvas, center, secondArcRadius, paint);
+    drawArc(canvas, center, thirdArcRadius, paint);
+    drawArc(canvas, center, fourthArcRadius, paint);
 
     final linePaint = Paint()
       ..color = radarColor
       ..strokeWidth = 4 / 100 * firstArcRadius
       ..style = PaintingStyle.stroke;
 
-    for (var i = 0; i < 17; i++) {
+    for (var i = 0; i < 16; i++) {
       final angle = i * pi / 8;
       final start = Offset(
         center.dx + firstArcRadius * cos(angle),
@@ -125,16 +98,28 @@ class AirDefenseSystemLinesPainter extends CustomPainter {
         center.dx + secondArcRadius * cos(angle),
         center.dy + secondArcRadius * sin(angle),
       );
+
       canvas.drawLine(start, end, linePaint);
     }
 
-    for (var i = 0; i < 15; i++) {
+    for (var i = 0; i < 8; i++) {
       final angle = i * pi / 4;
+
       final x = center.dx + secondArcRadius * cos(angle);
       final y = center.dy + secondArcRadius * sin(angle);
 
       canvas.drawLine(center, Offset(x, y), paint);
     }
+  }
+
+  void drawArc(Canvas canvas, Offset center, double firstArcRadius, Paint paint) {
+    canvas.drawArc(
+      Rect.fromCircle(center: center, radius: firstArcRadius),
+      0,
+      2 * pi,
+      false,
+      paint,
+    );
   }
 
   @override
