@@ -11,12 +11,11 @@ class AirDefenseSystemApp extends StatelessWidget {
       title: 'Flutter Demo',
       theme: ThemeData.dark(),
       home: Scaffold(
+        backgroundColor: const Color(0xFF001600),
         body: Center(
-          child: Container(
-            width: 500,
-            height: 500,
-            margin: const EdgeInsets.all(15),
-            child: const AirDefenseSystem(),
+          child: AirDefenseSystem(
+            radarRange: 10,
+            enemySize: 25,
           ),
         ),
       ),
