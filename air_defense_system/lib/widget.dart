@@ -21,7 +21,7 @@ class AirDefenseSystem extends StatelessWidget {
     return Container(
       width: 500,
       height: 500,
-      margin: const EdgeInsets.all(15),
+      margin: const EdgeInsets.all(30),
       child: LayoutBuilder(builder: (context, constraint) {
         return AirDefenseRadar(
           radarRange: radarRange,
