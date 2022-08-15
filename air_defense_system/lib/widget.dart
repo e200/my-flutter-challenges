@@ -22,26 +22,30 @@ class AirDefenseSystem extends StatelessWidget {
       width: 500,
       height: 500,
       margin: const EdgeInsets.all(15),
-      child: AirDefenseRadar(
-        radarRange: radarRange,
-        enemySize: enemySize,
-        targetsToEngage: _targetsToAngage,
-        onScanUpdated: (radarAngle) {
-          _findAndEngageTarget(radarAngle, radarRange);
-        },
-        onTargetAdd: (targetPosition) {
-          _targetsPositions.add(targetPosition);
-        },
-        onTargetOutOfRange: (target) async {
-          // _targetsToAngage.remove(target);
-        },
-      ),
+      child: LayoutBuilder(builder: (context, constraint) {
+        return AirDefenseRadar(
+          radarRange: radarRange,
+          enemySize: enemySize,
+          targetsToEngage: _targetsToAngage,
+          onScanUpdated: (radarAngle) {
+            final areaSize = Size(constraint.maxWidth, constraint.maxHeight);
+
+            _findAndEngageTarget(radarAngle, radarRange, areaSize);
+          },
+          onTargetAdd: (targetPosition) {
+            _targetsPositions.add(targetPosition);
+          },
+          onTargetOutOfRange: (target) async {
+            // _targetsToAngage.remove(target);
+          },
+        );
+      }),
     );
   }
 
-  _findAndEngageTarget(double radarAngle, double radarRangeAreaPercentage) async {
-    const size = Size(500, 500);
-    final center = size.center(Offset.zero);
+  _findAndEngageTarget(
+      double radarAngle, double radarRangeAreaPercentage, Size areaSize) async {
+    final center = areaSize.center(Offset.zero);
 
     final radarRange = (pi * 2) / 100 * radarRangeAreaPercentage;
 

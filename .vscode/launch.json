@@ -1,0 +1,208 @@
+{
+  // Use IntelliSense to learn about possible attributes.
+  // Hover to view descriptions of existing attributes.
+  // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "air_defense_system",
+      "cwd": "air_defense_system",
+      "request": "launch",
+      "type": "dart"
+    },
+    {
+      "name": "air_defense_system (profile mode)",
+      "cwd": "air_defense_system",
+      "request": "launch",
+      "type": "dart",
+      "flutterMode": "profile"
+    },
+    {
+      "name": "air_defense_system (release mode)",
+      "cwd": "air_defense_system",
+      "request": "launch",
+      "type": "dart",
+      "flutterMode": "release"
+    },
+    {
+      "name": "animated_mouse_pointer",
+      "cwd": "animated_mouse_pointer",
+      "request": "launch",
+      "type": "dart"
+    },
+    {
+      "name": "animated_mouse_pointer (profile mode)",
+      "cwd": "animated_mouse_pointer",
+      "request": "launch",
+      "type": "dart",
+      "flutterMode": "profile"
+    },
+    {
+      "name": "animated_mouse_pointer (release mode)",
+      "cwd": "animated_mouse_pointer",
+      "request": "launch",
+      "type": "dart",
+      "flutterMode": "release"
+    },
+    {
+      "name": "clock",
+      "cwd": "clock",
+      "request": "launch",
+      "type": "dart"
+    },
+    {
+      "name": "clock (profile mode)",
+      "cwd": "clock",
+      "request": "launch",
+      "type": "dart",
+      "flutterMode": "profile"
+    },
+    {
+      "name": "clock (release mode)",
+      "cwd": "clock",
+      "request": "launch",
+      "type": "dart",
+      "flutterMode": "release"
+    },
+    {
+      "name": "devil_parallax",
+      "cwd": "devil_parallax",
+      "request": "launch",
+      "type": "dart"
+    },
+    {
+      "name": "devil_parallax (profile mode)",
+      "cwd": "devil_parallax",
+      "request": "launch",
+      "type": "dart",
+      "flutterMode": "profile"
+    },
+    {
+      "name": "devil_parallax (release mode)",
+      "cwd": "devil_parallax",
+      "request": "launch",
+      "type": "dart",
+      "flutterMode": "release"
+    },
+    {
+      "name": "facebook_desktop",
+      "cwd": "facebook_desktop",
+      "request": "launch",
+      "type": "dart"
+    },
+    {
+      "name": "facebook_desktop (profile mode)",
+      "cwd": "facebook_desktop",
+      "request": "launch",
+      "type": "dart",
+      "flutterMode": "profile"
+    },
+    {
+      "name": "facebook_desktop (release mode)",
+      "cwd": "facebook_desktop",
+      "request": "launch",
+      "type": "dart",
+      "flutterMode": "release"
+    },
+    {
+      "name": "flutter_desktop_media_player",
+      "cwd": "flutter_desktop_media_player",
+      "request": "launch",
+      "type": "dart"
+    },
+    {
+      "name": "flutter_desktop_media_player (profile mode)",
+      "cwd": "flutter_desktop_media_player",
+      "request": "launch",
+      "type": "dart",
+      "flutterMode": "profile"
+    },
+    {
+      "name": "flutter_desktop_media_player (release mode)",
+      "cwd": "flutter_desktop_media_player",
+      "request": "launch",
+      "type": "dart",
+      "flutterMode": "release"
+    },
+    {
+      "name": "infinite_scroll",
+      "cwd": "infinite_scroll",
+      "request": "launch",
+      "type": "dart"
+    },
+    {
+      "name": "infinite_scroll (profile mode)",
+      "cwd": "infinite_scroll",
+      "request": "launch",
+      "type": "dart",
+      "flutterMode": "profile"
+    },
+    {
+      "name": "infinite_scroll (release mode)",
+      "cwd": "infinite_scroll",
+      "request": "launch",
+      "type": "dart",
+      "flutterMode": "release"
+    },
+    {
+      "name": "macbook_keyboard",
+      "cwd": "macbook_keyboard",
+      "request": "launch",
+      "type": "dart"
+    },
+    {
+      "name": "macbook_keyboard (profile mode)",
+      "cwd": "macbook_keyboard",
+      "request": "launch",
+      "type": "dart",
+      "flutterMode": "profile"
+    },
+    {
+      "name": "macbook_keyboard (release mode)",
+      "cwd": "macbook_keyboard",
+      "request": "launch",
+      "type": "dart",
+      "flutterMode": "release"
+    },
+    {
+      "name": "mouse_trail",
+      "cwd": "mouse_trail",
+      "request": "launch",
+      "type": "dart"
+    },
+    {
+      "name": "mouse_trail (profile mode)",
+      "cwd": "mouse_trail",
+      "request": "launch",
+      "type": "dart",
+      "flutterMode": "profile"
+    },
+    {
+      "name": "mouse_trail (release mode)",
+      "cwd": "mouse_trail",
+      "request": "launch",
+      "type": "dart",
+      "flutterMode": "release"
+    },
+    {
+      "name": "twitter_desktop",
+      "cwd": "twitter_desktop",
+      "request": "launch",
+      "type": "dart"
+    },
+    {
+      "name": "twitter_desktop (profile mode)",
+      "cwd": "twitter_desktop",
+      "request": "launch",
+      "type": "dart",
+      "flutterMode": "profile"
+    },
+    {
+      "name": "twitter_desktop (release mode)",
+      "cwd": "twitter_desktop",
+      "request": "launch",
+      "type": "dart",
+      "flutterMode": "release"
+    }
+  ]
+}
