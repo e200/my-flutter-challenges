@@ -12,7 +12,7 @@ Leave a ⭐ if you find this repo awesome 😊
 |[Air Defense System](air_defense_system)|
 |:-:|
 |![Parallax Devil](air_defense_system/screenshots/screenshot.gif)|
-|[Demo](https://stupendous-gumption-4803c7.netlify.app/#/)<br>[YouTube](https://youtu.be/ZMamr7tlJS4)|
+|[Demo](https://stupendous-gumption-4803c7.netlify.app/#/)<br>[YouTube](https://youtu.be/J0zI0Salpsc)|
 
 |[Parallax Devil](devil_parallax)|[Macbook Keyboard](macbook_keyboard)|
 |:-:|:-:|
